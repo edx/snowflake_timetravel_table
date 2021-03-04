@@ -1,0 +1,16 @@
+# This "run_project" dbt project is used to actually run models using the snowflake_timetravel_table materialization for
+# integration tests.  It requires the target schema to be first setup using the "seed_project" dbt project seeds+models.
+config-version: 2
+
+name: 'snowflake_timetravel_table_integration_tests'
+version: '0.0.1'
+
+profile: 'integration_tests'
+
+source-paths: ["models"]
+test-paths: ["tests"]
+data-paths: ["data"]
+
+models:
+  # We must disable creating tables as "transient" since those do not support time travel.
+  transient: false

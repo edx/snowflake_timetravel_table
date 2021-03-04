@@ -1,0 +1,23 @@
+# This file is used for integrations tests only.
+
+config:
+    send_anonymous_usage_stats: False
+
+integration_tests:
+  target: snowflake
+  outputs:
+    snowflake:
+      type: snowflake
+      account: "{{ env_var('SNOWFLAKE_TEST_ACCOUNT') }}"
+      user: "{{ env_var('SNOWFLAKE_TEST_USER') }}"
+      private_key_path: "{{ env_var('SNOWFLAKE_TEST_PRIVATE_KEY_PATH') }}"
+      private_key_passphrase: "{{ env_var('SNOWFLAKE_TEST_PRIVATE_KEY_PASSPHRASE') }}"
+      # Alternatively, use externalbrowser auth:
+      #authenticator: externalbrowser
+      # or password auth:
+      #password: "{{ env_var('SNOWFLAKE_TEST_PASSWORD') }}"
+      role: "{{ env_var('SNOWFLAKE_TEST_ROLE') }}"
+      database: "{{ env_var('SNOWFLAKE_TEST_DATABASE') }}"
+      warehouse: "{{ env_var('SNOWFLAKE_TEST_WAREHOUSE') }}"
+      schema: "{{ env_var('SNOWFLAKE_TEST_SCHEMA') }}"
+      threads: 1

@@ -1,0 +1,22 @@
+.python/
+.tox/
+*.egg-info/
+*.class
+*.pyc
+*.pyd
+
+# pyenv version file
+.python-version
+
+# pyenv environment itself
+env/
+
+*.DS_Store
+
+# PyCharm files
+*.idea/
+
+# dbt build files
+target/
+dbt_modules/
+logs/

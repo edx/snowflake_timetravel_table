@@ -1,0 +1,48 @@
+# This "seed_project" dbt project is used for preparing the target schema for integration testing the
+# snowflake_timetravel_table materialization.  It includes dbt seeds and models to create various tables, views, and
+# even absence of tables.
+config-version: 2
+
+name: 'snowflake_timetravel_table_integration_tests'
+version: '0.0.1'
+
+profile: 'integration_tests'
+
+source-paths: ["models"]
+test-paths: ["tests"]
+data-paths: ["data"]
+
+models:
+  # We must disable creating tables as "transient" since those do not support time travel.
+  transient: false
+
+# We must specify and configure each seed here (in addition to creating the CSV file) because the column types need to
+# be configured.  Column types cannot be left for dbt to infer from the CSVs because the integration tests rely on the
+# exact types.
+seeds:
+  snowflake_timetravel_table_integration_tests:
+    snowflake_timetravel_table_integration_tests_columns_no_change:
+      +column_types:
+        col1: int
+        col2: varchar(10)
+        col3: varchar(20)
+    snowflake_timetravel_table_integration_tests_columns_renamed:
+      +column_types:
+        col1: int
+        col2: varchar(10)
+        col3: varchar(20)
+    snowflake_timetravel_table_integration_tests_column_types_changed:
+      +column_types:
+        col1: int
+        col2: varchar(10)
+        col3: varchar(20)
+    snowflake_timetravel_table_integration_tests_columns_added:
+      +column_types:
+        col1: int
+        col2: varchar(10)
+        col3: varchar(20)
+    snowflake_timetravel_table_integration_tests_columns_removed:
+      +column_types:
+        col1: int
+        col2: varchar(10)
+        col3: varchar(20)
