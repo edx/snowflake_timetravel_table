@@ -2,7 +2,7 @@ name: snowflake_timetravel_table Black Checker
 
 on:
   push:
-    branches: [master]
+    branches: [main]
   pull_request:
     branches:
     - '**'
