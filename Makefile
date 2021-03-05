@@ -15,5 +15,8 @@
 test:
 	tox
 
+check-black:
+	tox -e black
+
 black:
 	black --line-length 120 integration_tests/tests
