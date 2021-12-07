@@ -75,21 +75,10 @@ def test_validate_time_travel():
         run_results = json.load(run_results_file)
 
     no_change_model_results = None
-    if (
-        "metadata" in run_results
-        and run_results["metadata"]["dbt_schema_version"] == "https://schemas.getdbt.com/dbt/run-results/v1.json"
-    ):
-        # dbt v0.19 uses this run-results schema version.
-        for model_results in run_results["results"]:
-            if model_results["unique_id"].endswith(".snowflake_timetravel_table_integration_tests_columns_no_change"):
-                no_change_model_results = model_results
-                break
-    else:
-        # dbt v0.18 and earlier uses this non-versioned run-results schema version.
-        for model_results in run_results["results"]:
-            if model_results["node"]["alias"] == "snowflake_timetravel_table_integration_tests_columns_no_change":
-                no_change_model_results = model_results
-                break
+    for model_results in run_results["results"]:
+        if model_results["unique_id"].endswith(".snowflake_timetravel_table_integration_tests_columns_no_change"):
+            no_change_model_results = model_results
+            break
 
     # Determine when exactly the _columns_no_change test started to execute which is close to the moment when time
     # travel history changes for this model.
