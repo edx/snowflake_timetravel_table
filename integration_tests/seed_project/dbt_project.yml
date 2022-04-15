@@ -8,9 +8,9 @@ version: '0.0.1'
 
 profile: 'integration_tests'
 
-source-paths: ["models"]
+model-paths: ["models"]
 test-paths: ["tests"]
-data-paths: ["data"]
+seed-paths: ["data"]
 
 models:
   # We must disable creating tables as "transient" since those do not support time travel.
