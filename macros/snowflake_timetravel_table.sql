@@ -44,12 +44,19 @@
     --   dest_columns (list of dict):
     --     List of column details for the relation, in the form returned by adapter.get_columns_in_relation().
   #}
-  truncate table {{ target_relation }};
+
   {%- set dest_cols_csv = get_quoted_csv(dest_columns | map(attribute="name")) -%}
-  insert into {{ target_relation }} ({{ dest_cols_csv }})
-  (
-    {{ sql }}
-  );
+
+  {%- set dml -%}
+    truncate table {{ target_relation }};
+    insert into {{ target_relation }} ({{ dest_cols_csv }})
+    (
+      {{ sql }}
+    )
+  {%- endset -%}
+
+  {% do return(snowflake_dml_explicit_transaction(dml)) %}
+
 {%- endmacro %}
 
 
@@ -71,15 +78,12 @@
                                                 schema=schema,
                                                 database=database, type='table') -%}
 
-  {{ run_hooks(pre_hooks, inside_transaction=False) }}
-
-  -- `BEGIN` happens here:
-  {{ run_hooks(pre_hooks, inside_transaction=True) }}
+  {{ run_hooks(pre_hooks) }}
 
   {% if old_relation is none %}
       {% set build_sql = create_table_as(false, target_relation, sql) %}
   {% else %}
-    {% if not old_relation.is_table %}
+    {% if old_relation is not none and not old_relation.is_table %}
       {#-- Drop the relation if it was a view to "convert" it in a table. This may lead to
         -- downtime, but it should be a relatively infrequent occurrence  #}
       {{ log("Dropping relation " ~ old_relation ~ " because it is of type " ~ old_relation.type) }}
@@ -119,12 +123,7 @@
     {{ build_sql }}
   {%- endcall %}
 
-  {{ run_hooks(post_hooks, inside_transaction=True) }}
-
-  -- `COMMIT` happens here
-  {{ adapter.commit() }}
-
-  {{ run_hooks(post_hooks, inside_transaction=False) }}
+  {{ run_hooks(post_hooks) }}
 
   {% do persist_docs(target_relation, model) %}
 

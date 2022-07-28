@@ -1,4 +1,4 @@
 config-version: 2
 
 name: 'snowflake_timetravel_table'
-version: '0.0.3'
+version: '0.0.4'
