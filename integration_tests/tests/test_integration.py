@@ -29,8 +29,10 @@ RUN_RESULTS_PATH = os.path.join(
         (
             "snowflake_timetravel_table_integration_tests_columns_no_change",
             (
+                "begin",
                 "truncate table",
                 "insert into",
+                "commit",
             ),
         ),
         (
