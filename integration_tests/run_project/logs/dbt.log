@@ -32953,3 +32953,460 @@ where col2 = 'new'
 2021-02-01 20:50:09.739036 (MainThread): 
 Done. PASS=1 WARN=0 ERROR=0 SKIP=0 TOTAL=1
 2021-02-01 20:50:09.739230 (MainThread): Flushing usage events
+
+
+============================== 17:50:02.586409 | f4b528cc-d385-447d-ae92-15215e0b6fca ==============================
+[0m17:50:02.586409 [info ] [MainThread]: Running with dbt=1.7.4
+[0m17:50:02.588466 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': 'integration_tests/test_profile', 'fail_fast': 'False', 'warn_error': 'None', 'log_path': 'integration_tests/run_project/logs', 'debug': 'False', 'version_check': 'True', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'invocation_command': 'dbt deps --project-dir integration_tests/run_project --profiles-dir integration_tests/test_profile', 'introspect': 'True', 'static_parser': 'True', 'target_path': 'None', 'log_format': 'default', 'send_anonymous_usage_stats': 'False'}
+[0m17:50:02.638805 [debug] [MainThread]: Set downloads directory='/var/folders/km/w4j5n82573q2nbdnzyk1sjtw0000gp/T/dbt-downloads-vwx4hnd8'
+[0m17:50:02.640285 [info ] [MainThread]: Updating lock file in file path: /Users/abdul.rafey/Projects/edx/snowflake_timetravel_table/integration_tests/run_project/package-lock.yml
+[0m17:50:02.641283 [debug] [MainThread]: Set downloads directory='/var/folders/km/w4j5n82573q2nbdnzyk1sjtw0000gp/T/dbt-downloads-vgpy43n5'
+[0m17:50:02.641494 [info ] [MainThread]: Installing ../../
+[0m17:50:02.642039 [debug] [MainThread]: Creating symlink to local dependency.
+[0m17:50:02.642238 [info ] [MainThread]: Installed from <local @ ../../>
+[0m17:50:02.643360 [debug] [MainThread]: Resource report: {"command_name": "deps", "command_success": true, "command_wall_clock_time": 0.08713171, "process_user_time": 1.215008, "process_kernel_time": 0.085833, "process_mem_max_rss": "98844672", "process_in_blocks": "0", "process_out_blocks": "0"}
+[0m17:50:02.643671 [debug] [MainThread]: Command `dbt deps` succeeded at 17:50:02.643600 after 0.09 seconds
+[0m17:50:02.643846 [debug] [MainThread]: Flushing usage events
+
+
+============================== 17:50:03.869125 | c814b0fc-36c5-4543-9c98-3ee5dd95b06b ==============================
+[0m17:50:03.869125 [info ] [MainThread]: Running with dbt=1.7.4
+[0m17:50:03.871197 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': 'integration_tests/test_profile', 'fail_fast': 'False', 'warn_error': 'None', 'log_path': 'integration_tests/run_project/logs', 'debug': 'False', 'version_check': 'True', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'invocation_command': 'dbt run --project-dir integration_tests/run_project --profiles-dir integration_tests/test_profile', 'introspect': 'True', 'static_parser': 'True', 'target_path': 'None', 'log_format': 'default', 'send_anonymous_usage_stats': 'False'}
+[0m17:50:04.113972 [info ] [MainThread]: Registered adapter: snowflake=1.7.1
+[0m17:50:04.126578 [debug] [MainThread]: checksum: 248e8aba381ba2d577dce7ab50d2010c2aac45d2b27e6e6214cdd96d2d41fabc, vars: {}, profile: , target: , version: 1.7.4
+[0m17:50:04.127194 [info ] [MainThread]: Unable to do partial parsing because saved manifest not found. Starting full parse.
+[0m17:50:04.746112 [info ] [MainThread]: Found 7 models, 1 test, 0 sources, 0 exposures, 0 metrics, 433 macros, 0 groups, 0 semantic models
+[0m17:50:04.747009 [info ] [MainThread]: 
+[0m17:50:04.747407 [debug] [MainThread]: Acquiring new snowflake connection 'master'
+[0m17:50:04.748082 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_USER_DATA'
+[0m17:50:04.755626 [debug] [ThreadPool]: Using snowflake connection "list_USER_DATA"
+[0m17:50:04.755852 [debug] [ThreadPool]: On list_USER_DATA: /* {"app": "dbt", "dbt_version": "1.7.4", "profile_name": "integration_tests", "target_name": "snowflake", "connection_name": "list_USER_DATA"} */
+show terse schemas in database USER_DATA
+    limit 10000
+[0m17:50:04.756048 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m17:50:07.718871 [debug] [ThreadPool]: SQL status: SUCCESS 93 in 3.0 seconds
+[0m17:50:07.729763 [debug] [ThreadPool]: On list_USER_DATA: Close
+[0m17:50:08.560277 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_USER_DATA, now list_USER_DATA_ARAFEY)
+[0m17:50:08.572974 [debug] [ThreadPool]: Using snowflake connection "list_USER_DATA_ARAFEY"
+[0m17:50:08.573384 [debug] [ThreadPool]: On list_USER_DATA_ARAFEY: /* {"app": "dbt", "dbt_version": "1.7.4", "profile_name": "integration_tests", "target_name": "snowflake", "connection_name": "list_USER_DATA_ARAFEY"} */
+show terse objects in USER_DATA.ARAFEY limit 10000
+[0m17:50:08.573710 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m17:50:11.166780 [debug] [ThreadPool]: SQL status: SUCCESS 968 in 3.0 seconds
+[0m17:50:11.223604 [debug] [ThreadPool]: On list_USER_DATA_ARAFEY: Close
+[0m17:50:12.219091 [info ] [MainThread]: Concurrency: 10 threads (target='snowflake')
+[0m17:50:12.219401 [info ] [MainThread]: 
+[0m17:50:12.221838 [debug] [Thread-1  ]: Began running node model.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_column_types_changed
+[0m17:50:12.222080 [debug] [Thread-2  ]: Began running node model.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_columns_added
+[0m17:50:12.222325 [debug] [Thread-3  ]: Began running node model.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_columns_no_change
+[0m17:50:12.222784 [debug] [Thread-4  ]: Began running node model.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_columns_removed
+[0m17:50:12.223055 [debug] [Thread-5  ]: Began running node model.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_columns_renamed
+[0m17:50:12.222593 [info ] [Thread-1  ]: 1 of 7 START sql snowflake_timetravel_table model ARAFEY.snowflake_timetravel_table_integration_tests_column_types_changed  [RUN]
+[0m17:50:12.223342 [debug] [Thread-6  ]: Began running node model.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_table_does_not_exist
+[0m17:50:12.223782 [debug] [Thread-7  ]: Began running node model.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_was_a_view
+[0m17:50:12.223581 [info ] [Thread-2  ]: 2 of 7 START sql snowflake_timetravel_table model ARAFEY.snowflake_timetravel_table_integration_tests_columns_added  [RUN]
+[0m17:50:12.224177 [info ] [Thread-3  ]: 3 of 7 START sql snowflake_timetravel_table model ARAFEY.snowflake_timetravel_table_integration_tests_columns_no_change  [RUN]
+[0m17:50:12.224471 [info ] [Thread-4  ]: 4 of 7 START sql snowflake_timetravel_table model ARAFEY.snowflake_timetravel_table_integration_tests_columns_removed  [RUN]
+[0m17:50:12.224767 [info ] [Thread-5  ]: 5 of 7 START sql snowflake_timetravel_table model ARAFEY.snowflake_timetravel_table_integration_tests_columns_renamed  [RUN]
+[0m17:50:12.225192 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly list_USER_DATA_ARAFEY, now model.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_column_types_changed)
+[0m17:50:12.225500 [info ] [Thread-6  ]: 6 of 7 START sql snowflake_timetravel_table model ARAFEY.snowflake_timetravel_table_integration_tests_table_does_not_exist  [RUN]
+[0m17:50:12.225785 [info ] [Thread-7  ]: 7 of 7 START sql snowflake_timetravel_table model ARAFEY.snowflake_timetravel_table_integration_tests_was_a_view  [RUN]
+[0m17:50:12.226214 [debug] [Thread-2  ]: Acquiring new snowflake connection 'model.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_columns_added'
+[0m17:50:12.226632 [debug] [Thread-3  ]: Acquiring new snowflake connection 'model.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_columns_no_change'
+[0m17:50:12.227026 [debug] [Thread-4  ]: Acquiring new snowflake connection 'model.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_columns_removed'
+[0m17:50:12.227424 [debug] [Thread-5  ]: Acquiring new snowflake connection 'model.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_columns_renamed'
+[0m17:50:12.227682 [debug] [Thread-1  ]: Began compiling node model.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_column_types_changed
+[0m17:50:12.228062 [debug] [Thread-6  ]: Acquiring new snowflake connection 'model.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_table_does_not_exist'
+[0m17:50:12.228443 [debug] [Thread-7  ]: Acquiring new snowflake connection 'model.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_was_a_view'
+[0m17:50:12.228649 [debug] [Thread-2  ]: Began compiling node model.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_columns_added
+[0m17:50:12.228878 [debug] [Thread-3  ]: Began compiling node model.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_columns_no_change
+[0m17:50:12.229259 [debug] [Thread-4  ]: Began compiling node model.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_columns_removed
+[0m17:50:12.229733 [debug] [Thread-5  ]: Began compiling node model.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_columns_renamed
+[0m17:50:12.235238 [debug] [Thread-1  ]: Writing injected SQL for node "model.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_column_types_changed"
+[0m17:50:12.235558 [debug] [Thread-6  ]: Began compiling node model.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_table_does_not_exist
+[0m17:50:12.236221 [debug] [Thread-7  ]: Began compiling node model.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_was_a_view
+[0m17:50:12.238503 [debug] [Thread-2  ]: Writing injected SQL for node "model.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_columns_added"
+[0m17:50:12.240882 [debug] [Thread-3  ]: Writing injected SQL for node "model.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_columns_no_change"
+[0m17:50:12.242676 [debug] [Thread-4  ]: Writing injected SQL for node "model.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_columns_removed"
+[0m17:50:12.244445 [debug] [Thread-5  ]: Writing injected SQL for node "model.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_columns_renamed"
+[0m17:50:12.246879 [debug] [Thread-6  ]: Writing injected SQL for node "model.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_table_does_not_exist"
+[0m17:50:12.247544 [debug] [Thread-1  ]: Timing info for model.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_column_types_changed (compile): 17:50:12.230013 => 17:50:12.247172
+[0m17:50:12.249510 [debug] [Thread-7  ]: Writing injected SQL for node "model.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_was_a_view"
+[0m17:50:12.250219 [debug] [Thread-3  ]: Timing info for model.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_columns_no_change (compile): 17:50:12.238691 => 17:50:12.250012
+[0m17:50:12.250489 [debug] [Thread-2  ]: Timing info for model.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_columns_added (compile): 17:50:12.236618 => 17:50:12.250347
+[0m17:50:12.251403 [debug] [Thread-5  ]: Timing info for model.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_columns_renamed (compile): 17:50:12.242922 => 17:50:12.251259
+[0m17:50:12.251669 [debug] [Thread-1  ]: Began executing node model.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_column_types_changed
+[0m17:50:12.251929 [debug] [Thread-4  ]: Timing info for model.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_columns_removed (compile): 17:50:12.241142 => 17:50:12.251809
+[0m17:50:12.252212 [debug] [Thread-6  ]: Timing info for model.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_table_does_not_exist (compile): 17:50:12.245258 => 17:50:12.252089
+[0m17:50:12.252410 [debug] [Thread-3  ]: Began executing node model.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_columns_no_change
+[0m17:50:12.252650 [debug] [Thread-2  ]: Began executing node model.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_columns_added
+[0m17:50:12.252876 [debug] [Thread-5  ]: Began executing node model.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_columns_renamed
+[0m17:50:12.253135 [debug] [Thread-7  ]: Timing info for model.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_was_a_view (compile): 17:50:12.247741 => 17:50:12.253014
+[0m17:50:12.261211 [debug] [Thread-4  ]: Began executing node model.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_columns_removed
+[0m17:50:12.277474 [debug] [Thread-1  ]: Using snowflake connection "model.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_column_types_changed"
+[0m17:50:12.277743 [debug] [Thread-6  ]: Began executing node model.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_table_does_not_exist
+[0m17:50:12.283760 [debug] [Thread-3  ]: Using snowflake connection "model.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_columns_no_change"
+[0m17:50:12.290257 [debug] [Thread-2  ]: Using snowflake connection "model.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_columns_added"
+[0m17:50:12.296485 [debug] [Thread-5  ]: Using snowflake connection "model.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_columns_renamed"
+[0m17:50:12.296728 [debug] [Thread-7  ]: Began executing node model.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_was_a_view
+[0m17:50:12.302487 [debug] [Thread-4  ]: Using snowflake connection "model.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_columns_removed"
+[0m17:50:12.302736 [debug] [Thread-1  ]: On model.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_column_types_changed: /* {"app": "dbt", "dbt_version": "1.7.4", "profile_name": "integration_tests", "target_name": "snowflake", "node_id": "model.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_column_types_changed"} */
+create or replace   view USER_DATA.ARAFEY.snowflake_timetravel_table_integration_tests_column_types_changed__dbt_tmp
+  
+   as (
+    -- Test changing the type of a column without altering the column count or names.
+-- In this case, we changed col2 from a varchar(10) to a varchar(15).
+
+
+
+select 1::int as col1, 'new'::varchar(15) as col2, 'values'::varchar(20) as col3
+union all
+select 2, 'new', 'values'
+  );
+[0m17:50:12.314827 [debug] [Thread-3  ]: On model.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_columns_no_change: /* {"app": "dbt", "dbt_version": "1.7.4", "profile_name": "integration_tests", "target_name": "snowflake", "node_id": "model.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_columns_no_change"} */
+create or replace   view USER_DATA.ARAFEY.snowflake_timetravel_table_integration_tests_columns_no_change__dbt_tmp
+  
+   as (
+    -- Test case for no change in the columns.
+
+
+
+select 1::int as col1, 'new'::varchar(10) as col2, 'values'::varchar(20) as col3
+union all
+select 2, 'new', 'values'
+  );
+[0m17:50:12.317580 [debug] [Thread-6  ]: Writing runtime sql for node "model.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_table_does_not_exist"
+[0m17:50:12.317835 [debug] [Thread-2  ]: On model.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_columns_added: /* {"app": "dbt", "dbt_version": "1.7.4", "profile_name": "integration_tests", "target_name": "snowflake", "node_id": "model.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_columns_added"} */
+create or replace   view USER_DATA.ARAFEY.snowflake_timetravel_table_integration_tests_columns_added__dbt_tmp
+  
+   as (
+    -- Test adding new columns.
+
+
+
+select 1::int as col1, 'new'::varchar(10) as col2, 'values'::varchar(20) as col3, 3::int as newcol
+union all
+select 2, 'new', 'values', 4
+  );
+[0m17:50:12.318063 [debug] [Thread-5  ]: On model.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_columns_renamed: /* {"app": "dbt", "dbt_version": "1.7.4", "profile_name": "integration_tests", "target_name": "snowflake", "node_id": "model.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_columns_renamed"} */
+create or replace   view USER_DATA.ARAFEY.snowflake_timetravel_table_integration_tests_columns_renamed__dbt_tmp
+  
+   as (
+    -- Test renaming columns without altering the column count or types.
+
+
+
+select 1::int as col1, 'new'::varchar(10) as col2renamed, 'values'::varchar(20) as col3
+union all
+select 2, 'new', 'values'
+  );
+[0m17:50:12.323295 [debug] [Thread-7  ]: Dropping relation "USER_DATA"."ARAFEY"."SNOWFLAKE_TIMETRAVEL_TABLE_INTEGRATION_TESTS_WAS_A_VIEW" because it is of type view
+[0m17:50:12.323531 [debug] [Thread-4  ]: On model.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_columns_removed: /* {"app": "dbt", "dbt_version": "1.7.4", "profile_name": "integration_tests", "target_name": "snowflake", "node_id": "model.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_columns_removed"} */
+create or replace   view USER_DATA.ARAFEY.snowflake_timetravel_table_integration_tests_columns_removed__dbt_tmp
+  
+   as (
+    -- Test removing columns.
+
+
+
+select 1::int as col1, 'new'::varchar(10) as col2
+union all
+select 2, 'new'
+  );
+[0m17:50:12.323735 [debug] [Thread-1  ]: Opening a new connection, currently in state closed
+[0m17:50:12.323918 [debug] [Thread-3  ]: Opening a new connection, currently in state init
+[0m17:50:12.324198 [debug] [Thread-2  ]: Opening a new connection, currently in state init
+[0m17:50:12.324438 [debug] [Thread-5  ]: Opening a new connection, currently in state init
+[0m17:50:12.329116 [debug] [Thread-7  ]: Applying DROP to: "USER_DATA"."ARAFEY"."SNOWFLAKE_TIMETRAVEL_TABLE_INTEGRATION_TESTS_WAS_A_VIEW"
+[0m17:50:12.329352 [debug] [Thread-4  ]: Opening a new connection, currently in state init
+[0m17:50:12.330621 [debug] [Thread-6  ]: Using snowflake connection "model.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_table_does_not_exist"
+[0m17:50:12.334573 [debug] [Thread-7  ]: Using snowflake connection "model.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_was_a_view"
+[0m17:50:12.336718 [debug] [Thread-6  ]: On model.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_table_does_not_exist: /* {"app": "dbt", "dbt_version": "1.7.4", "profile_name": "integration_tests", "target_name": "snowflake", "node_id": "model.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_table_does_not_exist"} */
+create or replace  table USER_DATA.ARAFEY.snowflake_timetravel_table_integration_tests_table_does_not_exist
+         as
+        (-- Test what happens when no relation exists before running this model.
+
+
+
+select 1::int as col1, 'new'::varchar(10) as col2, 'values'::varchar(20) as col3
+union all
+select 2, 'new', 'values'
+        );
+[0m17:50:12.337560 [debug] [Thread-7  ]: On model.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_was_a_view: /* {"app": "dbt", "dbt_version": "1.7.4", "profile_name": "integration_tests", "target_name": "snowflake", "node_id": "model.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_was_a_view"} */
+drop view if exists "USER_DATA"."ARAFEY"."SNOWFLAKE_TIMETRAVEL_TABLE_INTEGRATION_TESTS_WAS_A_VIEW" cascade
+[0m17:50:12.339110 [debug] [Thread-6  ]: Opening a new connection, currently in state init
+[0m17:50:12.339920 [debug] [Thread-7  ]: Opening a new connection, currently in state init
+[0m17:50:14.483736 [debug] [Thread-4  ]: SQL status: SUCCESS 1 in 2.0 seconds
+[0m17:50:14.498540 [debug] [Thread-4  ]: Using snowflake connection "model.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_columns_removed"
+[0m17:50:14.499107 [debug] [Thread-4  ]: On model.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_columns_removed: /* {"app": "dbt", "dbt_version": "1.7.4", "profile_name": "integration_tests", "target_name": "snowflake", "node_id": "model.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_columns_removed"} */
+describe table USER_DATA.ARAFEY.snowflake_timetravel_table_integration_tests_columns_removed
+[0m17:50:14.507024 [debug] [Thread-7  ]: SQL status: SUCCESS 1 in 2.0 seconds
+[0m17:50:14.508947 [debug] [Thread-7  ]: Writing runtime sql for node "model.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_was_a_view"
+[0m17:50:14.509656 [debug] [Thread-5  ]: SQL status: SUCCESS 1 in 2.0 seconds
+[0m17:50:14.513503 [debug] [Thread-5  ]: Using snowflake connection "model.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_columns_renamed"
+[0m17:50:14.513909 [debug] [Thread-5  ]: On model.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_columns_renamed: /* {"app": "dbt", "dbt_version": "1.7.4", "profile_name": "integration_tests", "target_name": "snowflake", "node_id": "model.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_columns_renamed"} */
+describe table USER_DATA.ARAFEY.snowflake_timetravel_table_integration_tests_columns_renamed
+[0m17:50:14.514888 [debug] [Thread-7  ]: Using snowflake connection "model.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_was_a_view"
+[0m17:50:14.515595 [debug] [Thread-7  ]: On model.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_was_a_view: /* {"app": "dbt", "dbt_version": "1.7.4", "profile_name": "integration_tests", "target_name": "snowflake", "node_id": "model.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_was_a_view"} */
+create or replace  table USER_DATA.ARAFEY.snowflake_timetravel_table_integration_tests_was_a_view
+         as
+        (-- Test what happens when a relation for this model did pre-exist, but it ws a view instead of a table.
+
+
+
+select 1::int as col1, 'new'::varchar(10) as col2, 'values'::varchar(20) as col3
+union all
+select 2, 'new', 'values'
+        );
+[0m17:50:14.533944 [debug] [Thread-1  ]: SQL status: SUCCESS 1 in 2.0 seconds
+[0m17:50:14.537406 [debug] [Thread-1  ]: Using snowflake connection "model.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_column_types_changed"
+[0m17:50:14.537782 [debug] [Thread-1  ]: On model.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_column_types_changed: /* {"app": "dbt", "dbt_version": "1.7.4", "profile_name": "integration_tests", "target_name": "snowflake", "node_id": "model.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_column_types_changed"} */
+describe table USER_DATA.ARAFEY.snowflake_timetravel_table_integration_tests_column_types_changed
+[0m17:50:14.538892 [debug] [Thread-2  ]: SQL status: SUCCESS 1 in 2.0 seconds
+[0m17:50:14.542275 [debug] [Thread-2  ]: Using snowflake connection "model.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_columns_added"
+[0m17:50:14.542715 [debug] [Thread-2  ]: On model.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_columns_added: /* {"app": "dbt", "dbt_version": "1.7.4", "profile_name": "integration_tests", "target_name": "snowflake", "node_id": "model.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_columns_added"} */
+describe table USER_DATA.ARAFEY.snowflake_timetravel_table_integration_tests_columns_added
+[0m17:50:14.546214 [debug] [Thread-3  ]: SQL status: SUCCESS 1 in 2.0 seconds
+[0m17:50:14.548990 [debug] [Thread-3  ]: Using snowflake connection "model.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_columns_no_change"
+[0m17:50:14.549318 [debug] [Thread-3  ]: On model.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_columns_no_change: /* {"app": "dbt", "dbt_version": "1.7.4", "profile_name": "integration_tests", "target_name": "snowflake", "node_id": "model.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_columns_no_change"} */
+describe table USER_DATA.ARAFEY.snowflake_timetravel_table_integration_tests_columns_no_change
+[0m17:50:14.922829 [debug] [Thread-4  ]: SQL status: SUCCESS 3 in 0.0 seconds
+[0m17:50:14.931683 [debug] [Thread-5  ]: SQL status: SUCCESS 3 in 0.0 seconds
+[0m17:50:14.933281 [debug] [Thread-4  ]: Using snowflake connection "model.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_columns_removed"
+[0m17:50:14.940975 [debug] [Thread-5  ]: Using snowflake connection "model.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_columns_renamed"
+[0m17:50:14.941632 [debug] [Thread-4  ]: On model.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_columns_removed: /* {"app": "dbt", "dbt_version": "1.7.4", "profile_name": "integration_tests", "target_name": "snowflake", "node_id": "model.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_columns_removed"} */
+describe table USER_DATA.ARAFEY.snowflake_timetravel_table_integration_tests_columns_removed__dbt_tmp
+[0m17:50:14.942158 [debug] [Thread-5  ]: On model.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_columns_renamed: /* {"app": "dbt", "dbt_version": "1.7.4", "profile_name": "integration_tests", "target_name": "snowflake", "node_id": "model.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_columns_renamed"} */
+describe table USER_DATA.ARAFEY.snowflake_timetravel_table_integration_tests_columns_renamed__dbt_tmp
+[0m17:50:14.974113 [debug] [Thread-3  ]: SQL status: SUCCESS 3 in 0.0 seconds
+[0m17:50:14.975220 [debug] [Thread-2  ]: SQL status: SUCCESS 3 in 0.0 seconds
+[0m17:50:14.985004 [debug] [Thread-3  ]: Using snowflake connection "model.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_columns_no_change"
+[0m17:50:14.989265 [debug] [Thread-1  ]: SQL status: SUCCESS 3 in 0.0 seconds
+[0m17:50:14.997249 [debug] [Thread-2  ]: Using snowflake connection "model.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_columns_added"
+[0m17:50:14.997628 [debug] [Thread-3  ]: On model.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_columns_no_change: /* {"app": "dbt", "dbt_version": "1.7.4", "profile_name": "integration_tests", "target_name": "snowflake", "node_id": "model.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_columns_no_change"} */
+describe table USER_DATA.ARAFEY.snowflake_timetravel_table_integration_tests_columns_no_change__dbt_tmp
+[0m17:50:15.001077 [debug] [Thread-1  ]: Using snowflake connection "model.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_column_types_changed"
+[0m17:50:15.001462 [debug] [Thread-2  ]: On model.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_columns_added: /* {"app": "dbt", "dbt_version": "1.7.4", "profile_name": "integration_tests", "target_name": "snowflake", "node_id": "model.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_columns_added"} */
+describe table USER_DATA.ARAFEY.snowflake_timetravel_table_integration_tests_columns_added__dbt_tmp
+[0m17:50:15.002140 [debug] [Thread-1  ]: On model.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_column_types_changed: /* {"app": "dbt", "dbt_version": "1.7.4", "profile_name": "integration_tests", "target_name": "snowflake", "node_id": "model.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_column_types_changed"} */
+describe table USER_DATA.ARAFEY.snowflake_timetravel_table_integration_tests_column_types_changed__dbt_tmp
+[0m17:50:15.180291 [debug] [Thread-6  ]: SQL status: SUCCESS 1 in 3.0 seconds
+[0m17:50:15.197278 [debug] [Thread-6  ]: Timing info for model.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_table_does_not_exist (execute): 17:50:12.302881 => 17:50:15.196963
+[0m17:50:15.197822 [debug] [Thread-6  ]: On model.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_table_does_not_exist: Close
+[0m17:50:15.369363 [debug] [Thread-5  ]: SQL status: SUCCESS 3 in 0.0 seconds
+[0m17:50:15.385697 [debug] [Thread-5  ]: Applying DROP to: USER_DATA.ARAFEY.snowflake_timetravel_table_integration_tests_columns_renamed__dbt_tmp
+[0m17:50:15.388056 [debug] [Thread-5  ]: Using snowflake connection "model.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_columns_renamed"
+[0m17:50:15.389264 [debug] [Thread-4  ]: SQL status: SUCCESS 2 in 0.0 seconds
+[0m17:50:15.389822 [debug] [Thread-5  ]: On model.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_columns_renamed: /* {"app": "dbt", "dbt_version": "1.7.4", "profile_name": "integration_tests", "target_name": "snowflake", "node_id": "model.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_columns_renamed"} */
+drop view if exists USER_DATA.ARAFEY.snowflake_timetravel_table_integration_tests_columns_renamed__dbt_tmp cascade
+[0m17:50:15.394903 [debug] [Thread-4  ]: Applying DROP to: USER_DATA.ARAFEY.snowflake_timetravel_table_integration_tests_columns_removed__dbt_tmp
+[0m17:50:15.396657 [debug] [Thread-4  ]: Using snowflake connection "model.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_columns_removed"
+[0m17:50:15.397445 [debug] [Thread-4  ]: On model.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_columns_removed: /* {"app": "dbt", "dbt_version": "1.7.4", "profile_name": "integration_tests", "target_name": "snowflake", "node_id": "model.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_columns_removed"} */
+drop view if exists USER_DATA.ARAFEY.snowflake_timetravel_table_integration_tests_columns_removed__dbt_tmp cascade
+[0m17:50:15.445759 [debug] [Thread-7  ]: SQL status: SUCCESS 1 in 1.0 seconds
+[0m17:50:15.448662 [debug] [Thread-7  ]: Timing info for model.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_was_a_view (execute): 17:50:12.318199 => 17:50:15.448378
+[0m17:50:15.449142 [debug] [Thread-7  ]: On model.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_was_a_view: Close
+[0m17:50:15.457135 [debug] [Thread-2  ]: SQL status: SUCCESS 4 in 0.0 seconds
+[0m17:50:15.462243 [debug] [Thread-2  ]: Applying DROP to: USER_DATA.ARAFEY.snowflake_timetravel_table_integration_tests_columns_added__dbt_tmp
+[0m17:50:15.465000 [debug] [Thread-2  ]: Using snowflake connection "model.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_columns_added"
+[0m17:50:15.465432 [debug] [Thread-2  ]: On model.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_columns_added: /* {"app": "dbt", "dbt_version": "1.7.4", "profile_name": "integration_tests", "target_name": "snowflake", "node_id": "model.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_columns_added"} */
+drop view if exists USER_DATA.ARAFEY.snowflake_timetravel_table_integration_tests_columns_added__dbt_tmp cascade
+[0m17:50:15.467105 [debug] [Thread-3  ]: SQL status: SUCCESS 3 in 0.0 seconds
+[0m17:50:15.467862 [debug] [Thread-1  ]: SQL status: SUCCESS 3 in 0.0 seconds
+[0m17:50:15.471775 [debug] [Thread-3  ]: Applying DROP to: USER_DATA.ARAFEY.snowflake_timetravel_table_integration_tests_columns_no_change__dbt_tmp
+[0m17:50:15.475703 [debug] [Thread-1  ]: Applying DROP to: USER_DATA.ARAFEY.snowflake_timetravel_table_integration_tests_column_types_changed__dbt_tmp
+[0m17:50:15.476772 [debug] [Thread-3  ]: Using snowflake connection "model.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_columns_no_change"
+[0m17:50:15.477915 [debug] [Thread-1  ]: Using snowflake connection "model.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_column_types_changed"
+[0m17:50:15.478592 [debug] [Thread-3  ]: On model.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_columns_no_change: /* {"app": "dbt", "dbt_version": "1.7.4", "profile_name": "integration_tests", "target_name": "snowflake", "node_id": "model.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_columns_no_change"} */
+drop view if exists USER_DATA.ARAFEY.snowflake_timetravel_table_integration_tests_columns_no_change__dbt_tmp cascade
+[0m17:50:15.479039 [debug] [Thread-1  ]: On model.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_column_types_changed: /* {"app": "dbt", "dbt_version": "1.7.4", "profile_name": "integration_tests", "target_name": "snowflake", "node_id": "model.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_column_types_changed"} */
+drop view if exists USER_DATA.ARAFEY.snowflake_timetravel_table_integration_tests_column_types_changed__dbt_tmp cascade
+[0m17:50:15.897217 [debug] [Thread-4  ]: SQL status: SUCCESS 1 in 0.0 seconds
+[0m17:50:15.901847 [debug] [Thread-4  ]: Writing runtime sql for node "model.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_columns_removed"
+[0m17:50:15.903245 [debug] [Thread-5  ]: SQL status: SUCCESS 1 in 1.0 seconds
+[0m17:50:15.905865 [debug] [Thread-5  ]: Writing runtime sql for node "model.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_columns_renamed"
+[0m17:50:15.907431 [debug] [Thread-4  ]: Using snowflake connection "model.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_columns_removed"
+[0m17:50:15.908008 [debug] [Thread-4  ]: On model.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_columns_removed: /* {"app": "dbt", "dbt_version": "1.7.4", "profile_name": "integration_tests", "target_name": "snowflake", "node_id": "model.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_columns_removed"} */
+create or replace  table USER_DATA.ARAFEY.snowflake_timetravel_table_integration_tests_columns_removed
+         as
+        (-- Test removing columns.
+
+
+
+select 1::int as col1, 'new'::varchar(10) as col2
+union all
+select 2, 'new'
+        );
+[0m17:50:15.909177 [debug] [Thread-5  ]: Using snowflake connection "model.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_columns_renamed"
+[0m17:50:15.910410 [debug] [Thread-5  ]: On model.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_columns_renamed: /* {"app": "dbt", "dbt_version": "1.7.4", "profile_name": "integration_tests", "target_name": "snowflake", "node_id": "model.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_columns_renamed"} */
+create or replace  table USER_DATA.ARAFEY.snowflake_timetravel_table_integration_tests_columns_renamed
+         as
+        (-- Test renaming columns without altering the column count or types.
+
+
+
+select 1::int as col1, 'new'::varchar(10) as col2renamed, 'values'::varchar(20) as col3
+union all
+select 2, 'new', 'values'
+        );
+[0m17:50:15.941070 [debug] [Thread-1  ]: SQL status: SUCCESS 1 in 0.0 seconds
+[0m17:50:15.944034 [debug] [Thread-1  ]: Writing runtime sql for node "model.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_column_types_changed"
+[0m17:50:15.945853 [debug] [Thread-1  ]: Using snowflake connection "model.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_column_types_changed"
+[0m17:50:15.946488 [debug] [Thread-1  ]: On model.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_column_types_changed: /* {"app": "dbt", "dbt_version": "1.7.4", "profile_name": "integration_tests", "target_name": "snowflake", "node_id": "model.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_column_types_changed"} */
+create or replace  table USER_DATA.ARAFEY.snowflake_timetravel_table_integration_tests_column_types_changed
+         as
+        (-- Test changing the type of a column without altering the column count or names.
+-- In this case, we changed col2 from a varchar(10) to a varchar(15).
+
+
+
+select 1::int as col1, 'new'::varchar(15) as col2, 'values'::varchar(20) as col3
+union all
+select 2, 'new', 'values'
+        );
+[0m17:50:15.952587 [debug] [Thread-2  ]: SQL status: SUCCESS 1 in 0.0 seconds
+[0m17:50:15.954574 [debug] [Thread-2  ]: Writing runtime sql for node "model.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_columns_added"
+[0m17:50:15.955879 [debug] [Thread-2  ]: Using snowflake connection "model.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_columns_added"
+[0m17:50:15.956364 [debug] [Thread-2  ]: On model.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_columns_added: /* {"app": "dbt", "dbt_version": "1.7.4", "profile_name": "integration_tests", "target_name": "snowflake", "node_id": "model.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_columns_added"} */
+create or replace  table USER_DATA.ARAFEY.snowflake_timetravel_table_integration_tests_columns_added
+         as
+        (-- Test adding new columns.
+
+
+
+select 1::int as col1, 'new'::varchar(10) as col2, 'values'::varchar(20) as col3, 3::int as newcol
+union all
+select 2, 'new', 'values', 4
+        );
+[0m17:50:15.973766 [debug] [Thread-3  ]: SQL status: SUCCESS 1 in 0.0 seconds
+[0m17:50:15.984138 [debug] [Thread-3  ]: Writing runtime sql for node "model.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_columns_no_change"
+[0m17:50:15.985555 [debug] [Thread-3  ]: Using snowflake connection "model.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_columns_no_change"
+[0m17:50:15.985972 [debug] [Thread-3  ]: On model.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_columns_no_change: /* {"app": "dbt", "dbt_version": "1.7.4", "profile_name": "integration_tests", "target_name": "snowflake", "node_id": "model.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_columns_no_change"} */
+BEGIN
+[0m17:50:16.021666 [info ] [Thread-6  ]: 6 of 7 OK created sql snowflake_timetravel_table model ARAFEY.snowflake_timetravel_table_integration_tests_table_does_not_exist  [[32mSUCCESS 1[0m in 3.79s]
+[0m17:50:16.022511 [debug] [Thread-6  ]: Finished running node model.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_table_does_not_exist
+[0m17:50:16.250239 [info ] [Thread-7  ]: 7 of 7 OK created sql snowflake_timetravel_table model ARAFEY.snowflake_timetravel_table_integration_tests_was_a_view  [[32mSUCCESS 1[0m in 4.02s]
+[0m17:50:16.251974 [debug] [Thread-7  ]: Finished running node model.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_was_a_view
+[0m17:50:16.426574 [debug] [Thread-3  ]: SQL status: SUCCESS 1 in 0.0 seconds
+[0m17:50:16.427896 [debug] [Thread-3  ]: Using snowflake connection "model.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_columns_no_change"
+[0m17:50:16.428732 [debug] [Thread-3  ]: On model.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_columns_no_change: /* {"app": "dbt", "dbt_version": "1.7.4", "profile_name": "integration_tests", "target_name": "snowflake", "node_id": "model.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_columns_no_change"} */
+truncate table USER_DATA.ARAFEY.snowflake_timetravel_table_integration_tests_columns_no_change;
+[0m17:50:16.918441 [debug] [Thread-5  ]: SQL status: SUCCESS 1 in 1.0 seconds
+[0m17:50:16.923011 [debug] [Thread-5  ]: Timing info for model.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_columns_renamed (execute): 17:50:12.290424 => 17:50:16.922629
+[0m17:50:16.923699 [debug] [Thread-5  ]: On model.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_columns_renamed: Close
+[0m17:50:16.936817 [debug] [Thread-2  ]: SQL status: SUCCESS 1 in 1.0 seconds
+[0m17:50:16.939858 [debug] [Thread-2  ]: Timing info for model.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_columns_added (execute): 17:50:12.284542 => 17:50:16.939524
+[0m17:50:16.940441 [debug] [Thread-2  ]: On model.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_columns_added: Close
+[0m17:50:16.947071 [debug] [Thread-4  ]: SQL status: SUCCESS 1 in 1.0 seconds
+[0m17:50:16.949423 [debug] [Thread-4  ]: Timing info for model.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_columns_removed (execute): 17:50:12.296859 => 17:50:16.949153
+[0m17:50:16.949903 [debug] [Thread-4  ]: On model.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_columns_removed: Close
+[0m17:50:17.075160 [debug] [Thread-3  ]: SQL status: SUCCESS 1 in 1.0 seconds
+[0m17:50:17.076392 [debug] [Thread-3  ]: Using snowflake connection "model.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_columns_no_change"
+[0m17:50:17.077144 [debug] [Thread-3  ]: On model.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_columns_no_change: /* {"app": "dbt", "dbt_version": "1.7.4", "profile_name": "integration_tests", "target_name": "snowflake", "node_id": "model.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_columns_no_change"} */
+insert into USER_DATA.ARAFEY.snowflake_timetravel_table_integration_tests_columns_no_change ("COL1", "COL2", "COL3")
+    (
+      -- Test case for no change in the columns.
+
+
+
+select 1::int as col1, 'new'::varchar(10) as col2, 'values'::varchar(20) as col3
+union all
+select 2, 'new', 'values'
+    );
+[0m17:50:17.183429 [debug] [Thread-1  ]: SQL status: SUCCESS 1 in 1.0 seconds
+[0m17:50:17.186605 [debug] [Thread-1  ]: Timing info for model.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_column_types_changed (execute): 17:50:12.253251 => 17:50:17.186313
+[0m17:50:17.187133 [debug] [Thread-1  ]: On model.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_column_types_changed: Close
+[0m17:50:17.717539 [info ] [Thread-5  ]: 5 of 7 OK created sql snowflake_timetravel_table model ARAFEY.snowflake_timetravel_table_integration_tests_columns_renamed  [[32mSUCCESS 1[0m in 5.49s]
+[0m17:50:17.719206 [debug] [Thread-5  ]: Finished running node model.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_columns_renamed
+[0m17:50:17.734880 [info ] [Thread-4  ]: 4 of 7 OK created sql snowflake_timetravel_table model ARAFEY.snowflake_timetravel_table_integration_tests_columns_removed  [[32mSUCCESS 1[0m in 5.51s]
+[0m17:50:17.735788 [debug] [Thread-4  ]: Finished running node model.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_columns_removed
+[0m17:50:17.737256 [info ] [Thread-2  ]: 2 of 7 OK created sql snowflake_timetravel_table model ARAFEY.snowflake_timetravel_table_integration_tests_columns_added  [[32mSUCCESS 1[0m in 5.51s]
+[0m17:50:17.738010 [debug] [Thread-2  ]: Finished running node model.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_columns_added
+[0m17:50:17.781580 [debug] [Thread-3  ]: SQL status: SUCCESS 2 in 1.0 seconds
+[0m17:50:17.782350 [debug] [Thread-3  ]: Using snowflake connection "model.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_columns_no_change"
+[0m17:50:17.782852 [debug] [Thread-3  ]: On model.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_columns_no_change: /* {"app": "dbt", "dbt_version": "1.7.4", "profile_name": "integration_tests", "target_name": "snowflake", "node_id": "model.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_columns_no_change"} */
+COMMIT
+[0m17:50:17.983240 [info ] [Thread-1  ]: 1 of 7 OK created sql snowflake_timetravel_table model ARAFEY.snowflake_timetravel_table_integration_tests_column_types_changed  [[32mSUCCESS 1[0m in 5.76s]
+[0m17:50:17.984776 [debug] [Thread-1  ]: Finished running node model.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_column_types_changed
+[0m17:50:18.499696 [debug] [Thread-3  ]: SQL status: SUCCESS 1 in 1.0 seconds
+[0m17:50:18.505220 [debug] [Thread-3  ]: Timing info for model.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_columns_no_change (execute): 17:50:12.277898 => 17:50:18.504802
+[0m17:50:18.505900 [debug] [Thread-3  ]: On model.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_columns_no_change: Close
+[0m17:50:19.371534 [info ] [Thread-3  ]: 3 of 7 OK created sql snowflake_timetravel_table model ARAFEY.snowflake_timetravel_table_integration_tests_columns_no_change  [[32mSUCCESS 2[0m in 7.14s]
+[0m17:50:19.373251 [debug] [Thread-3  ]: Finished running node model.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_columns_no_change
+[0m17:50:19.376552 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m17:50:19.377234 [debug] [MainThread]: Connection 'model.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_column_types_changed' was properly closed.
+[0m17:50:19.377801 [debug] [MainThread]: Connection 'model.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_columns_added' was properly closed.
+[0m17:50:19.378242 [debug] [MainThread]: Connection 'model.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_columns_no_change' was properly closed.
+[0m17:50:19.378671 [debug] [MainThread]: Connection 'model.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_columns_removed' was properly closed.
+[0m17:50:19.379077 [debug] [MainThread]: Connection 'model.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_columns_renamed' was properly closed.
+[0m17:50:19.379483 [debug] [MainThread]: Connection 'model.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_table_does_not_exist' was properly closed.
+[0m17:50:19.379892 [debug] [MainThread]: Connection 'model.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_was_a_view' was properly closed.
+[0m17:50:19.380447 [info ] [MainThread]: 
+[0m17:50:19.380959 [info ] [MainThread]: Finished running 7 snowflake_timetravel_table models in 0 hours 0 minutes and 14.63 seconds (14.63s).
+[0m17:50:19.383106 [debug] [MainThread]: Command end result
+[0m17:50:19.396364 [info ] [MainThread]: 
+[0m17:50:19.396793 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m17:50:19.397131 [info ] [MainThread]: 
+[0m17:50:19.397474 [info ] [MainThread]: Done. PASS=7 WARN=0 ERROR=0 SKIP=0 TOTAL=7
+[0m17:50:19.399166 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 15.5589, "process_user_time": 3.049629, "process_kernel_time": 0.174957, "process_mem_max_rss": "149340160", "process_in_blocks": "0", "process_out_blocks": "0"}
+[0m17:50:19.399654 [debug] [MainThread]: Command `dbt run` succeeded at 17:50:19.399550 after 15.56 seconds
+[0m17:50:19.399954 [debug] [MainThread]: Flushing usage events
+
+
+============================== 17:50:22.209434 | 02e3eaed-16ff-46cf-9cb4-d75063729457 ==============================
+[0m17:50:22.209434 [info ] [MainThread]: Running with dbt=1.7.4
+[0m17:50:22.212073 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/Users/abdul.rafey/Projects/edx/snowflake_timetravel_table/integration_tests/tests/../test_profile', 'fail_fast': 'False', 'warn_error': 'None', 'log_path': '/Users/abdul.rafey/Projects/edx/snowflake_timetravel_table/integration_tests/tests/../run_project/logs', 'debug': 'False', 'version_check': 'True', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'invocation_command': 'dbt test -m test_snowflake_timetravel_table_integration_tests_columns_no_change --project-dir /Users/abdul.rafey/Projects/edx/snowflake_timetravel_table/integration_tests/tests/../run_project --profiles-dir /Users/abdul.rafey/Projects/edx/snowflake_timetravel_table/integration_tests/tests/../test_profile', 'introspect': 'True', 'static_parser': 'True', 'target_path': 'None', 'log_format': 'default', 'send_anonymous_usage_stats': 'False'}
+[0m17:50:22.453709 [info ] [MainThread]: Registered adapter: snowflake=1.7.1
+[0m17:50:22.465861 [debug] [MainThread]: checksum: 248e8aba381ba2d577dce7ab50d2010c2aac45d2b27e6e6214cdd96d2d41fabc, vars: {}, profile: , target: , version: 1.7.4
+[0m17:50:22.528552 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 1 files changed.
+[0m17:50:22.528902 [debug] [MainThread]: Partial parsing: updated file: snowflake_timetravel_table_integration_tests://tests/test_snowflake_timetravel_table_integration_tests_columns_no_change.sql
+[0m17:50:22.589768 [info ] [MainThread]: Found 7 models, 1 test, 0 sources, 0 exposures, 0 metrics, 433 macros, 0 groups, 0 semantic models
+[0m17:50:22.590370 [info ] [MainThread]: 
+[0m17:50:22.590743 [debug] [MainThread]: Acquiring new snowflake connection 'master'
+[0m17:50:22.591455 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_USER_DATA_ARAFEY'
+[0m17:50:22.599735 [debug] [ThreadPool]: Using snowflake connection "list_USER_DATA_ARAFEY"
+[0m17:50:22.599926 [debug] [ThreadPool]: On list_USER_DATA_ARAFEY: /* {"app": "dbt", "dbt_version": "1.7.4", "profile_name": "integration_tests", "target_name": "snowflake", "connection_name": "list_USER_DATA_ARAFEY"} */
+show terse objects in USER_DATA.ARAFEY limit 10000
+[0m17:50:22.600088 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m17:50:25.078292 [debug] [ThreadPool]: SQL status: SUCCESS 969 in 2.0 seconds
+[0m17:50:25.108365 [debug] [ThreadPool]: On list_USER_DATA_ARAFEY: Close
+[0m17:50:26.028183 [info ] [MainThread]: Concurrency: 10 threads (target='snowflake')
+[0m17:50:26.028462 [info ] [MainThread]: 
+[0m17:50:26.029824 [debug] [Thread-1  ]: Began running node test.snowflake_timetravel_table_integration_tests.test_snowflake_timetravel_table_integration_tests_columns_no_change
+[0m17:50:26.030067 [info ] [Thread-1  ]: 1 of 1 START test test_snowflake_timetravel_table_integration_tests_columns_no_change  [RUN]
+[0m17:50:26.030433 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly list_USER_DATA_ARAFEY, now test.snowflake_timetravel_table_integration_tests.test_snowflake_timetravel_table_integration_tests_columns_no_change)
+[0m17:50:26.030643 [debug] [Thread-1  ]: Began compiling node test.snowflake_timetravel_table_integration_tests.test_snowflake_timetravel_table_integration_tests_columns_no_change
+[0m17:50:26.035683 [debug] [Thread-1  ]: Writing injected SQL for node "test.snowflake_timetravel_table_integration_tests.test_snowflake_timetravel_table_integration_tests_columns_no_change"
+[0m17:50:26.036227 [debug] [Thread-1  ]: Timing info for test.snowflake_timetravel_table_integration_tests.test_snowflake_timetravel_table_integration_tests_columns_no_change (compile): 17:50:26.030780 => 17:50:26.036105
+[0m17:50:26.036442 [debug] [Thread-1  ]: Began executing node test.snowflake_timetravel_table_integration_tests.test_snowflake_timetravel_table_integration_tests_columns_no_change
+[0m17:50:26.049734 [debug] [Thread-1  ]: Writing runtime sql for node "test.snowflake_timetravel_table_integration_tests.test_snowflake_timetravel_table_integration_tests_columns_no_change"
+[0m17:50:26.050559 [debug] [Thread-1  ]: Using snowflake connection "test.snowflake_timetravel_table_integration_tests.test_snowflake_timetravel_table_integration_tests_columns_no_change"
+[0m17:50:26.050784 [debug] [Thread-1  ]: On test.snowflake_timetravel_table_integration_tests.test_snowflake_timetravel_table_integration_tests_columns_no_change: /* {"app": "dbt", "dbt_version": "1.7.4", "profile_name": "integration_tests", "target_name": "snowflake", "node_id": "test.snowflake_timetravel_table_integration_tests.test_snowflake_timetravel_table_integration_tests_columns_no_change"} */
+select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      select *
+from USER_DATA.ARAFEY.snowflake_timetravel_table_integration_tests_columns_no_change
+at (timestamp => '2024-03-13T12:50:12.277898Z'::timestamp_tz)
+where col2 = 'new'
+      
+    ) dbt_internal_test
+[0m17:50:26.050985 [debug] [Thread-1  ]: Opening a new connection, currently in state closed
+[0m17:50:28.480690 [debug] [Thread-1  ]: SQL status: SUCCESS 1 in 2.0 seconds
+[0m17:50:28.492784 [debug] [Thread-1  ]: Timing info for test.snowflake_timetravel_table_integration_tests.test_snowflake_timetravel_table_integration_tests_columns_no_change (execute): 17:50:26.036554 => 17:50:28.492370
+[0m17:50:28.493537 [debug] [Thread-1  ]: On test.snowflake_timetravel_table_integration_tests.test_snowflake_timetravel_table_integration_tests_columns_no_change: Close
+[0m17:50:29.296743 [info ] [Thread-1  ]: 1 of 1 PASS test_snowflake_timetravel_table_integration_tests_columns_no_change  [[32mPASS[0m in 3.27s]
+[0m17:50:29.297955 [debug] [Thread-1  ]: Finished running node test.snowflake_timetravel_table_integration_tests.test_snowflake_timetravel_table_integration_tests_columns_no_change
+[0m17:50:29.300509 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m17:50:29.300979 [debug] [MainThread]: Connection 'test.snowflake_timetravel_table_integration_tests.test_snowflake_timetravel_table_integration_tests_columns_no_change' was properly closed.
+[0m17:50:29.301453 [info ] [MainThread]: 
+[0m17:50:29.301899 [info ] [MainThread]: Finished running 1 test in 0 hours 0 minutes and 6.71 seconds (6.71s).
+[0m17:50:29.302713 [debug] [MainThread]: Command end result
+[0m17:50:29.313499 [info ] [MainThread]: 
+[0m17:50:29.313957 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m17:50:29.314261 [info ] [MainThread]: 
+[0m17:50:29.314616 [info ] [MainThread]: Done. PASS=1 WARN=0 ERROR=0 SKIP=0 TOTAL=1
+[0m17:50:29.316157 [debug] [MainThread]: Resource report: {"command_name": "test", "command_success": true, "command_wall_clock_time": 7.1360297, "process_user_time": 1.772092, "process_kernel_time": 0.140364, "process_mem_max_rss": "135086080", "process_in_blocks": "0", "process_out_blocks": "0"}
+[0m17:50:29.316697 [debug] [MainThread]: Command `dbt test` succeeded at 17:50:29.316585 after 7.14 seconds
+[0m17:50:29.317030 [debug] [MainThread]: Flushing usage events

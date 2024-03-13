@@ -14606,3 +14606,817 @@ select 2, 'old', 'values'
 Done. PASS=2 WARN=0 ERROR=0 SKIP=0 TOTAL=2
 2021-02-01 20:49:20.438953 (MainThread): Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f007841c160>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f007850a490>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f00780a5f70>]}
 2021-02-01 20:49:20.439264 (MainThread): Flushing usage events
+
+
+============================== 15:45:28.673234 | 23cdb3d5-fe82-4466-9a66-ac88d7ad2632 ==============================
+[0m15:45:28.673234 [info ] [MainThread]: Running with dbt=1.7.4
+[0m15:45:28.675539 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': 'integration_tests/test_profile', 'fail_fast': 'False', 'debug': 'False', 'log_path': 'integration_tests/seed_project/logs', 'warn_error': 'None', 'version_check': 'True', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'log_format': 'default', 'invocation_command': 'dbt seed --project-dir integration_tests/seed_project --profiles-dir integration_tests/test_profile --full-refresh', 'static_parser': 'True', 'introspect': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'send_anonymous_usage_stats': 'False'}
+[0m15:45:30.634881 [info ] [MainThread]: Registered adapter: snowflake=1.7.1
+[0m15:45:30.646457 [debug] [MainThread]: checksum: 248e8aba381ba2d577dce7ab50d2010c2aac45d2b27e6e6214cdd96d2d41fabc, vars: {}, profile: , target: , version: 1.7.4
+[0m15:45:30.646958 [info ] [MainThread]: Unable to do partial parsing because saved manifest not found. Starting full parse.
+[0m15:45:31.305539 [info ] [MainThread]: Found 2 models, 5 seeds, 0 sources, 0 exposures, 0 metrics, 430 macros, 0 groups, 0 semantic models
+[0m15:45:31.306410 [info ] [MainThread]: 
+[0m15:45:31.306826 [debug] [MainThread]: Acquiring new snowflake connection 'master'
+[0m15:45:31.307468 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_'
+[0m15:45:31.315854 [debug] [ThreadPool]: Using snowflake connection "list_"
+[0m15:45:31.316113 [debug] [ThreadPool]: On list_: /* {"app": "dbt", "dbt_version": "1.7.4", "profile_name": "integration_tests", "target_name": "snowflake", "connection_name": "list_"} */
+show terse schemas in database 
+    limit 10000
+[0m15:45:31.316301 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m15:45:31.319304 [debug] [ThreadPool]: Snowflake adapter: Error running SQL: /* {"app": "dbt", "dbt_version": "1.7.4", "profile_name": "integration_tests", "target_name": "snowflake", "connection_name": "list_"} */
+show terse schemas in database 
+    limit 10000
+[0m15:45:31.319523 [debug] [ThreadPool]: Snowflake adapter: Rolling back transaction.
+[0m15:45:31.319732 [debug] [ThreadPool]: Snowflake adapter: Error running SQL: macro list_schemas
+[0m15:45:31.319893 [debug] [ThreadPool]: Snowflake adapter: Rolling back transaction.
+[0m15:45:31.320084 [debug] [ThreadPool]: On list_: No close available on handle
+[0m15:45:31.320652 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m15:45:31.320802 [debug] [MainThread]: Connection 'list_' was properly closed.
+[0m15:45:31.320957 [info ] [MainThread]: 
+[0m15:45:31.321142 [info ] [MainThread]: Finished running  in 0 hours 0 minutes and 0.01 seconds (0.01s).
+[0m15:45:31.321398 [error] [MainThread]: Encountered an error:
+Runtime Error
+  Database error while listing schemas in database ""
+  Database Error
+    251005: User is empty
+[0m15:45:31.322912 [debug] [MainThread]: Resource report: {"command_name": "seed", "command_wall_clock_time": 2.6816864, "process_user_time": 2.181253, "process_kernel_time": 0.165855, "process_mem_max_rss": "126238720", "command_success": false, "process_in_blocks": "0", "process_out_blocks": "0"}
+[0m15:45:31.323249 [debug] [MainThread]: Command `dbt seed` failed at 15:45:31.323174 after 2.68 seconds
+[0m15:45:31.323444 [debug] [MainThread]: Flushing usage events
+
+
+============================== 15:47:08.228256 | 2a724a61-a0a1-4bc9-84ce-4f1c5108166e ==============================
+[0m15:47:08.228256 [info ] [MainThread]: Running with dbt=1.7.4
+[0m15:47:08.230945 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'fail_fast': 'False', 'debug': 'False', 'log_path': 'integration_tests/seed_project/logs', 'version_check': 'True', 'profiles_dir': 'integration_tests/test_profile', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'introspect': 'True', 'static_parser': 'True', 'log_format': 'default', 'target_path': 'None', 'invocation_command': 'dbt seed --project-dir integration_tests/seed_project --profiles-dir integration_tests/test_profile --full-refresh', 'send_anonymous_usage_stats': 'False'}
+[0m15:47:08.488903 [info ] [MainThread]: Registered adapter: snowflake=1.7.1
+[0m15:47:08.500872 [debug] [MainThread]: checksum: 248e8aba381ba2d577dce7ab50d2010c2aac45d2b27e6e6214cdd96d2d41fabc, vars: {}, profile: , target: , version: 1.7.4
+[0m15:47:08.569185 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m15:47:08.569428 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m15:47:08.577916 [info ] [MainThread]: Found 2 models, 5 seeds, 0 sources, 0 exposures, 0 metrics, 430 macros, 0 groups, 0 semantic models
+[0m15:47:08.578760 [info ] [MainThread]: 
+[0m15:47:08.579175 [debug] [MainThread]: Acquiring new snowflake connection 'master'
+[0m15:47:08.579783 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_'
+[0m15:47:08.587453 [debug] [ThreadPool]: Using snowflake connection "list_"
+[0m15:47:08.587649 [debug] [ThreadPool]: On list_: /* {"app": "dbt", "dbt_version": "1.7.4", "profile_name": "integration_tests", "target_name": "snowflake", "connection_name": "list_"} */
+show terse schemas in database 
+    limit 10000
+[0m15:47:08.587806 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m15:47:08.594531 [debug] [ThreadPool]: Snowflake adapter: Error running SQL: /* {"app": "dbt", "dbt_version": "1.7.4", "profile_name": "integration_tests", "target_name": "snowflake", "connection_name": "list_"} */
+show terse schemas in database 
+    limit 10000
+[0m15:47:08.594729 [debug] [ThreadPool]: Snowflake adapter: Rolling back transaction.
+[0m15:47:08.594913 [debug] [ThreadPool]: Snowflake adapter: Error running SQL: macro list_schemas
+[0m15:47:08.595069 [debug] [ThreadPool]: Snowflake adapter: Rolling back transaction.
+[0m15:47:08.595249 [debug] [ThreadPool]: On list_: No close available on handle
+[0m15:47:08.595760 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m15:47:08.595909 [debug] [MainThread]: Connection 'list_' was properly closed.
+[0m15:47:08.596058 [info ] [MainThread]: 
+[0m15:47:08.596244 [info ] [MainThread]: Finished running  in 0 hours 0 minutes and 0.02 seconds (0.02s).
+[0m15:47:08.596491 [error] [MainThread]: Encountered an error:
+Runtime Error
+  Database error while listing schemas in database ""
+  Database Error
+    251005: User is empty
+[0m15:47:08.597921 [debug] [MainThread]: Resource report: {"command_name": "seed", "command_wall_clock_time": 0.40121824, "process_user_time": 1.397467, "process_kernel_time": 0.127755, "process_mem_max_rss": "119914496", "command_success": false, "process_in_blocks": "0", "process_out_blocks": "0"}
+[0m15:47:08.598211 [debug] [MainThread]: Command `dbt seed` failed at 15:47:08.598147 after 0.40 seconds
+[0m15:47:08.598380 [debug] [MainThread]: Flushing usage events
+
+
+============================== 15:48:53.234281 | 135bae12-c76c-47bb-a699-0c1114309994 ==============================
+[0m15:48:53.234281 [info ] [MainThread]: Running with dbt=1.7.4
+[0m15:48:53.236971 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'debug': 'False', 'fail_fast': 'False', 'log_path': 'integration_tests/seed_project/logs', 'profiles_dir': 'integration_tests/test_profile', 'version_check': 'True', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'log_format': 'default', 'introspect': 'True', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'invocation_command': 'dbt seed --project-dir integration_tests/seed_project --profiles-dir integration_tests/test_profile --full-refresh', 'target_path': 'None', 'static_parser': 'True', 'send_anonymous_usage_stats': 'False'}
+[0m15:48:53.500039 [info ] [MainThread]: Registered adapter: snowflake=1.7.1
+[0m15:48:53.510533 [debug] [MainThread]: checksum: 248e8aba381ba2d577dce7ab50d2010c2aac45d2b27e6e6214cdd96d2d41fabc, vars: {}, profile: , target: , version: 1.7.4
+[0m15:48:53.543494 [info ] [MainThread]: Unable to do partial parsing because profile has changed
+[0m15:48:53.543838 [info ] [MainThread]: Unable to do partial parsing because env vars used in profiles.yml have changed
+[0m15:48:54.131402 [info ] [MainThread]: Found 2 models, 5 seeds, 0 sources, 0 exposures, 0 metrics, 430 macros, 0 groups, 0 semantic models
+[0m15:48:54.132230 [info ] [MainThread]: 
+[0m15:48:54.132623 [debug] [MainThread]: Acquiring new snowflake connection 'master'
+[0m15:48:54.133228 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_USER_DATA'
+[0m15:48:54.140831 [debug] [ThreadPool]: Using snowflake connection "list_USER_DATA"
+[0m15:48:54.141080 [debug] [ThreadPool]: On list_USER_DATA: /* {"app": "dbt", "dbt_version": "1.7.4", "profile_name": "integration_tests", "target_name": "snowflake", "connection_name": "list_USER_DATA"} */
+show terse schemas in database USER_DATA
+    limit 10000
+[0m15:48:54.141252 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m15:48:54.147975 [debug] [ThreadPool]: Snowflake adapter: Error running SQL: /* {"app": "dbt", "dbt_version": "1.7.4", "profile_name": "integration_tests", "target_name": "snowflake", "connection_name": "list_USER_DATA"} */
+show terse schemas in database USER_DATA
+    limit 10000
+[0m15:48:54.148148 [debug] [ThreadPool]: Snowflake adapter: Rolling back transaction.
+[0m15:48:54.148323 [debug] [ThreadPool]: Snowflake adapter: Error running SQL: macro list_schemas
+[0m15:48:54.148474 [debug] [ThreadPool]: Snowflake adapter: Rolling back transaction.
+[0m15:48:54.148651 [debug] [ThreadPool]: On list_USER_DATA: No close available on handle
+[0m15:48:54.149142 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m15:48:54.149288 [debug] [MainThread]: Connection 'list_USER_DATA' was properly closed.
+[0m15:48:54.149436 [info ] [MainThread]: 
+[0m15:48:54.149622 [info ] [MainThread]: Finished running  in 0 hours 0 minutes and 0.02 seconds (0.02s).
+[0m15:48:54.149862 [error] [MainThread]: Encountered an error:
+Runtime Error
+  Database error while listing schemas in database "USER_DATA"
+  Database Error
+    251005: User is empty
+[0m15:48:54.151302 [debug] [MainThread]: Resource report: {"command_name": "seed", "command_wall_clock_time": 0.9475189, "process_user_time": 1.888823, "process_kernel_time": 0.127149, "process_mem_max_rss": "123387904", "command_success": false, "process_in_blocks": "0", "process_out_blocks": "0"}
+[0m15:48:54.151610 [debug] [MainThread]: Command `dbt seed` failed at 15:48:54.151543 after 0.95 seconds
+[0m15:48:54.151786 [debug] [MainThread]: Flushing usage events
+
+
+============================== 15:51:02.661107 | 9342896e-72fd-44c8-998d-d9120a8c3bdf ==============================
+[0m15:51:02.661107 [info ] [MainThread]: Running with dbt=1.7.4
+[0m15:51:02.663783 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': 'integration_tests/test_profile', 'debug': 'False', 'version_check': 'True', 'log_path': 'integration_tests/seed_project/logs', 'fail_fast': 'False', 'warn_error': 'None', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'log_format': 'default', 'invocation_command': 'dbt seed --project-dir integration_tests/seed_project --profiles-dir integration_tests/test_profile --full-refresh', 'static_parser': 'True', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'target_path': 'None', 'introspect': 'True', 'send_anonymous_usage_stats': 'False'}
+[0m15:51:02.932228 [info ] [MainThread]: Registered adapter: snowflake=1.7.1
+[0m15:51:02.943059 [debug] [MainThread]: checksum: 248e8aba381ba2d577dce7ab50d2010c2aac45d2b27e6e6214cdd96d2d41fabc, vars: {}, profile: , target: , version: 1.7.4
+[0m15:51:02.976775 [info ] [MainThread]: Unable to do partial parsing because profile has changed
+[0m15:51:02.977099 [info ] [MainThread]: Unable to do partial parsing because env vars used in profiles.yml have changed
+[0m15:51:03.565211 [info ] [MainThread]: Found 2 models, 5 seeds, 0 sources, 0 exposures, 0 metrics, 430 macros, 0 groups, 0 semantic models
+[0m15:51:03.566097 [info ] [MainThread]: 
+[0m15:51:03.566504 [debug] [MainThread]: Acquiring new snowflake connection 'master'
+[0m15:51:03.567113 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_USER_DATA'
+[0m15:51:03.574540 [debug] [ThreadPool]: Using snowflake connection "list_USER_DATA"
+[0m15:51:03.574741 [debug] [ThreadPool]: On list_USER_DATA: /* {"app": "dbt", "dbt_version": "1.7.4", "profile_name": "integration_tests", "target_name": "snowflake", "connection_name": "list_USER_DATA"} */
+show terse schemas in database USER_DATA
+    limit 10000
+[0m15:51:03.574909 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m15:51:03.581928 [debug] [ThreadPool]: Snowflake adapter: Error running SQL: /* {"app": "dbt", "dbt_version": "1.7.4", "profile_name": "integration_tests", "target_name": "snowflake", "connection_name": "list_USER_DATA"} */
+show terse schemas in database USER_DATA
+    limit 10000
+[0m15:51:03.582106 [debug] [ThreadPool]: Snowflake adapter: Rolling back transaction.
+[0m15:51:03.582280 [debug] [ThreadPool]: Snowflake adapter: Error running SQL: macro list_schemas
+[0m15:51:03.582429 [debug] [ThreadPool]: Snowflake adapter: Rolling back transaction.
+[0m15:51:03.582605 [debug] [ThreadPool]: On list_USER_DATA: No close available on handle
+[0m15:51:03.583089 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m15:51:03.583240 [debug] [MainThread]: Connection 'list_USER_DATA' was properly closed.
+[0m15:51:03.583387 [info ] [MainThread]: 
+[0m15:51:03.583572 [info ] [MainThread]: Finished running  in 0 hours 0 minutes and 0.02 seconds (0.02s).
+[0m15:51:03.583815 [error] [MainThread]: Encountered an error:
+Runtime Error
+  Database error while listing schemas in database "USER_DATA"
+  Database Error
+    251005: User is empty
+[0m15:51:03.585258 [debug] [MainThread]: Resource report: {"command_name": "seed", "command_wall_clock_time": 0.9572076, "process_user_time": 1.890712, "process_kernel_time": 0.129302, "process_mem_max_rss": "125452288", "command_success": false, "process_in_blocks": "0", "process_out_blocks": "0"}
+[0m15:51:03.585545 [debug] [MainThread]: Command `dbt seed` failed at 15:51:03.585481 after 0.96 seconds
+[0m15:51:03.585719 [debug] [MainThread]: Flushing usage events
+
+
+============================== 15:51:21.506805 | ccdf0332-64e2-4b71-9736-78638504e142 ==============================
+[0m15:51:21.506805 [info ] [MainThread]: Running with dbt=1.7.4
+[0m15:51:21.509398 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'version_check': 'True', 'debug': 'False', 'log_path': 'integration_tests/seed_project/logs', 'fail_fast': 'False', 'profiles_dir': 'integration_tests/test_profile', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'log_format': 'default', 'static_parser': 'True', 'invocation_command': 'dbt seed --project-dir integration_tests/seed_project --profiles-dir integration_tests/test_profile --full-refresh', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'target_path': 'None', 'introspect': 'True', 'send_anonymous_usage_stats': 'False'}
+[0m15:51:21.514395 [error] [MainThread]: Encountered an error:
+Runtime Error
+  The profile 'integration_tests' does not have a target named 'dev'. The valid target names for this profile are:
+   - snowflake
+[0m15:51:21.515886 [debug] [MainThread]: Resource report: {"command_name": "seed", "command_wall_clock_time": 0.0393325, "process_user_time": 1.095368, "process_kernel_time": 0.081976, "process_mem_max_rss": "95715328", "command_success": false, "process_in_blocks": "0", "process_out_blocks": "0"}
+[0m15:51:21.516292 [debug] [MainThread]: Command `dbt seed` failed at 15:51:21.516206 after 0.04 seconds
+[0m15:51:21.516489 [debug] [MainThread]: Flushing usage events
+
+
+============================== 15:51:42.685297 | 3cccb6af-d487-48a2-a802-ff32225ec606 ==============================
+[0m15:51:42.685297 [info ] [MainThread]: Running with dbt=1.7.4
+[0m15:51:42.687362 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': 'integration_tests/test_profile', 'fail_fast': 'False', 'version_check': 'True', 'log_path': 'integration_tests/seed_project/logs', 'warn_error': 'None', 'debug': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'static_parser': 'True', 'invocation_command': 'dbt seed --project-dir integration_tests/seed_project --profiles-dir integration_tests/test_profile --full-refresh', 'introspect': 'True', 'target_path': 'None', 'log_format': 'default', 'send_anonymous_usage_stats': 'False'}
+[0m15:51:42.959764 [info ] [MainThread]: Registered adapter: snowflake=1.7.1
+[0m15:51:42.971160 [debug] [MainThread]: checksum: 248e8aba381ba2d577dce7ab50d2010c2aac45d2b27e6e6214cdd96d2d41fabc, vars: {}, profile: , target: , version: 1.7.4
+[0m15:51:43.004068 [info ] [MainThread]: Unable to do partial parsing because profile has changed
+[0m15:51:43.588791 [info ] [MainThread]: Found 2 models, 5 seeds, 0 sources, 0 exposures, 0 metrics, 430 macros, 0 groups, 0 semantic models
+[0m15:51:43.589653 [info ] [MainThread]: 
+[0m15:51:43.590069 [debug] [MainThread]: Acquiring new snowflake connection 'master'
+[0m15:51:43.590676 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_USER_DATA'
+[0m15:51:43.598184 [debug] [ThreadPool]: Using snowflake connection "list_USER_DATA"
+[0m15:51:43.598420 [debug] [ThreadPool]: On list_USER_DATA: /* {"app": "dbt", "dbt_version": "1.7.4", "profile_name": "integration_tests", "target_name": "dev", "connection_name": "list_USER_DATA"} */
+show terse schemas in database USER_DATA
+    limit 10000
+[0m15:51:43.598598 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m15:51:43.605486 [debug] [ThreadPool]: Snowflake adapter: Error running SQL: /* {"app": "dbt", "dbt_version": "1.7.4", "profile_name": "integration_tests", "target_name": "dev", "connection_name": "list_USER_DATA"} */
+show terse schemas in database USER_DATA
+    limit 10000
+[0m15:51:43.605674 [debug] [ThreadPool]: Snowflake adapter: Rolling back transaction.
+[0m15:51:43.605858 [debug] [ThreadPool]: Snowflake adapter: Error running SQL: macro list_schemas
+[0m15:51:43.606008 [debug] [ThreadPool]: Snowflake adapter: Rolling back transaction.
+[0m15:51:43.606197 [debug] [ThreadPool]: On list_USER_DATA: No close available on handle
+[0m15:51:43.606774 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m15:51:43.606952 [debug] [MainThread]: Connection 'list_USER_DATA' was properly closed.
+[0m15:51:43.607134 [info ] [MainThread]: 
+[0m15:51:43.607327 [info ] [MainThread]: Finished running  in 0 hours 0 minutes and 0.02 seconds (0.02s).
+[0m15:51:43.607585 [error] [MainThread]: Encountered an error:
+Runtime Error
+  Database error while listing schemas in database "USER_DATA"
+  Database Error
+    251005: User is empty
+[0m15:51:43.609043 [debug] [MainThread]: Resource report: {"command_name": "seed", "command_wall_clock_time": 0.95369524, "process_user_time": 1.880206, "process_kernel_time": 0.10775, "process_mem_max_rss": "124911616", "command_success": false, "process_in_blocks": "0", "process_out_blocks": "0"}
+[0m15:51:43.609326 [debug] [MainThread]: Command `dbt seed` failed at 15:51:43.609263 after 0.95 seconds
+[0m15:51:43.609497 [debug] [MainThread]: Flushing usage events
+
+
+============================== 15:52:05.138788 | 63a50c7d-ec99-4441-aa1e-71008352a794 ==============================
+[0m15:52:05.138788 [info ] [MainThread]: Running with dbt=1.7.4
+[0m15:52:05.140853 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'debug': 'False', 'profiles_dir': 'integration_tests/test_profile', 'log_path': 'integration_tests/seed_project/logs', 'version_check': 'True', 'fail_fast': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'introspect': 'True', 'invocation_command': 'dbt seed --project-dir integration_tests/seed_project --profiles-dir integration_tests/test_profile --full-refresh', 'static_parser': 'True', 'target_path': 'None', 'log_format': 'default', 'send_anonymous_usage_stats': 'False'}
+[0m15:52:05.350939 [info ] [MainThread]: Registered adapter: snowflake=1.7.1
+[0m15:52:05.360483 [debug] [MainThread]: checksum: 248e8aba381ba2d577dce7ab50d2010c2aac45d2b27e6e6214cdd96d2d41fabc, vars: {}, profile: , target: , version: 1.7.4
+[0m15:52:05.392373 [info ] [MainThread]: Unable to do partial parsing because profile has changed
+[0m15:52:05.962876 [info ] [MainThread]: Found 2 models, 5 seeds, 0 sources, 0 exposures, 0 metrics, 430 macros, 0 groups, 0 semantic models
+[0m15:52:05.963817 [info ] [MainThread]: 
+[0m15:52:05.964240 [debug] [MainThread]: Acquiring new snowflake connection 'master'
+[0m15:52:05.964861 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_USER_DATA'
+[0m15:52:05.972413 [debug] [ThreadPool]: Using snowflake connection "list_USER_DATA"
+[0m15:52:05.972657 [debug] [ThreadPool]: On list_USER_DATA: /* {"app": "dbt", "dbt_version": "1.7.4", "profile_name": "integration_tests", "target_name": "snowflake", "connection_name": "list_USER_DATA"} */
+show terse schemas in database USER_DATA
+    limit 10000
+[0m15:52:05.972919 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m15:52:05.980066 [debug] [ThreadPool]: Snowflake adapter: Error running SQL: /* {"app": "dbt", "dbt_version": "1.7.4", "profile_name": "integration_tests", "target_name": "snowflake", "connection_name": "list_USER_DATA"} */
+show terse schemas in database USER_DATA
+    limit 10000
+[0m15:52:05.980272 [debug] [ThreadPool]: Snowflake adapter: Rolling back transaction.
+[0m15:52:05.980467 [debug] [ThreadPool]: Snowflake adapter: Error running SQL: macro list_schemas
+[0m15:52:05.980616 [debug] [ThreadPool]: Snowflake adapter: Rolling back transaction.
+[0m15:52:05.980799 [debug] [ThreadPool]: On list_USER_DATA: No close available on handle
+[0m15:52:05.981346 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m15:52:05.981520 [debug] [MainThread]: Connection 'list_USER_DATA' was properly closed.
+[0m15:52:05.981679 [info ] [MainThread]: 
+[0m15:52:05.981880 [info ] [MainThread]: Finished running  in 0 hours 0 minutes and 0.02 seconds (0.02s).
+[0m15:52:05.982139 [error] [MainThread]: Encountered an error:
+Runtime Error
+  Database error while listing schemas in database "USER_DATA"
+  Database Error
+    251005: User is empty
+[0m15:52:05.983556 [debug] [MainThread]: Resource report: {"command_name": "seed", "command_wall_clock_time": 0.8757476, "process_user_time": 1.884462, "process_kernel_time": 0.106348, "process_mem_max_rss": "124108800", "command_success": false, "process_in_blocks": "0", "process_out_blocks": "0"}
+[0m15:52:05.983840 [debug] [MainThread]: Command `dbt seed` failed at 15:52:05.983778 after 0.88 seconds
+[0m15:52:05.984009 [debug] [MainThread]: Flushing usage events
+
+
+============================== 15:53:19.247809 | fd9c3446-e576-4b57-a902-38cd24b0ddd0 ==============================
+[0m15:53:19.247809 [info ] [MainThread]: Running with dbt=1.7.4
+[0m15:53:19.249926 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': 'integration_tests/test_profile', 'debug': 'False', 'version_check': 'True', 'log_path': 'integration_tests/seed_project/logs', 'fail_fast': 'False', 'warn_error': 'None', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'invocation_command': 'dbt seed --project-dir integration_tests/seed_project --profiles-dir integration_tests/test_profile --full-refresh', 'log_format': 'default', 'introspect': 'True', 'target_path': 'None', 'static_parser': 'True', 'send_anonymous_usage_stats': 'False'}
+[0m15:53:19.459868 [info ] [MainThread]: Registered adapter: snowflake=1.7.1
+[0m15:53:19.469505 [debug] [MainThread]: checksum: 248e8aba381ba2d577dce7ab50d2010c2aac45d2b27e6e6214cdd96d2d41fabc, vars: {}, profile: , target: , version: 1.7.4
+[0m15:53:19.501450 [info ] [MainThread]: Unable to do partial parsing because profile has changed
+[0m15:53:20.067193 [info ] [MainThread]: Found 2 models, 5 seeds, 0 sources, 0 exposures, 0 metrics, 430 macros, 0 groups, 0 semantic models
+[0m15:53:20.068037 [info ] [MainThread]: 
+[0m15:53:20.068437 [debug] [MainThread]: Acquiring new snowflake connection 'master'
+[0m15:53:20.069022 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_USER_DATA'
+[0m15:53:20.076719 [debug] [ThreadPool]: Using snowflake connection "list_USER_DATA"
+[0m15:53:20.076948 [debug] [ThreadPool]: On list_USER_DATA: /* {"app": "dbt", "dbt_version": "1.7.4", "profile_name": "integration_tests", "target_name": "snowflake", "connection_name": "list_USER_DATA"} */
+show terse schemas in database USER_DATA
+    limit 10000
+[0m15:53:20.077110 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m15:53:20.083382 [debug] [ThreadPool]: Snowflake adapter: Error running SQL: /* {"app": "dbt", "dbt_version": "1.7.4", "profile_name": "integration_tests", "target_name": "snowflake", "connection_name": "list_USER_DATA"} */
+show terse schemas in database USER_DATA
+    limit 10000
+[0m15:53:20.083566 [debug] [ThreadPool]: Snowflake adapter: Rolling back transaction.
+[0m15:53:20.083749 [debug] [ThreadPool]: Snowflake adapter: Error running SQL: macro list_schemas
+[0m15:53:20.083900 [debug] [ThreadPool]: Snowflake adapter: Rolling back transaction.
+[0m15:53:20.084078 [debug] [ThreadPool]: On list_USER_DATA: No close available on handle
+[0m15:53:20.084615 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m15:53:20.084786 [debug] [MainThread]: Connection 'list_USER_DATA' was properly closed.
+[0m15:53:20.084945 [info ] [MainThread]: 
+[0m15:53:20.085137 [info ] [MainThread]: Finished running  in 0 hours 0 minutes and 0.02 seconds (0.02s).
+[0m15:53:20.085381 [error] [MainThread]: Encountered an error:
+Runtime Error
+  Database error while listing schemas in database "USER_DATA"
+  Database Error
+    251005: User is empty
+[0m15:53:20.086366 [debug] [MainThread]: Resource report: {"command_name": "seed", "command_wall_clock_time": 0.87103444, "process_user_time": 1.87921, "process_kernel_time": 0.106306, "process_mem_max_rss": "125353984", "command_success": false, "process_in_blocks": "0", "process_out_blocks": "0"}
+[0m15:53:20.086697 [debug] [MainThread]: Command `dbt seed` failed at 15:53:20.086618 after 0.87 seconds
+[0m15:53:20.086911 [debug] [MainThread]: Flushing usage events
+
+
+============================== 17:38:56.220932 | b8e0f871-f648-4274-acd4-852f6753f484 ==============================
+[0m17:38:56.220932 [info ] [MainThread]: Running with dbt=1.7.4
+[0m17:38:56.223562 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': 'integration_tests/test_profile', 'debug': 'False', 'fail_fast': 'False', 'log_path': 'integration_tests/seed_project/logs', 'version_check': 'True', 'warn_error': 'None', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'log_format': 'default', 'static_parser': 'True', 'introspect': 'True', 'invocation_command': 'dbt seed --project-dir integration_tests/seed_project --profiles-dir integration_tests/test_profile --full-refresh', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'send_anonymous_usage_stats': 'False'}
+[0m17:38:56.498701 [info ] [MainThread]: Registered adapter: snowflake=1.7.1
+[0m17:38:56.508842 [debug] [MainThread]: checksum: 248e8aba381ba2d577dce7ab50d2010c2aac45d2b27e6e6214cdd96d2d41fabc, vars: {}, profile: , target: , version: 1.7.4
+[0m17:38:56.577203 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m17:38:56.577438 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m17:38:56.585897 [info ] [MainThread]: Found 2 models, 5 seeds, 0 sources, 0 exposures, 0 metrics, 430 macros, 0 groups, 0 semantic models
+[0m17:38:56.586723 [info ] [MainThread]: 
+[0m17:38:56.587138 [debug] [MainThread]: Acquiring new snowflake connection 'master'
+[0m17:38:56.587780 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_USER_DATA'
+[0m17:38:56.595534 [debug] [ThreadPool]: Using snowflake connection "list_USER_DATA"
+[0m17:38:56.595779 [debug] [ThreadPool]: On list_USER_DATA: /* {"app": "dbt", "dbt_version": "1.7.4", "profile_name": "integration_tests", "target_name": "snowflake", "connection_name": "list_USER_DATA"} */
+show terse schemas in database USER_DATA
+    limit 10000
+[0m17:38:56.595963 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m17:38:56.603086 [debug] [ThreadPool]: Snowflake adapter: Error running SQL: /* {"app": "dbt", "dbt_version": "1.7.4", "profile_name": "integration_tests", "target_name": "snowflake", "connection_name": "list_USER_DATA"} */
+show terse schemas in database USER_DATA
+    limit 10000
+[0m17:38:56.603258 [debug] [ThreadPool]: Snowflake adapter: Rolling back transaction.
+[0m17:38:56.603429 [debug] [ThreadPool]: Snowflake adapter: Error running SQL: macro list_schemas
+[0m17:38:56.603579 [debug] [ThreadPool]: Snowflake adapter: Rolling back transaction.
+[0m17:38:56.603754 [debug] [ThreadPool]: On list_USER_DATA: No close available on handle
+[0m17:38:56.604276 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m17:38:56.604435 [debug] [MainThread]: Connection 'list_USER_DATA' was properly closed.
+[0m17:38:56.604589 [info ] [MainThread]: 
+[0m17:38:56.604779 [info ] [MainThread]: Finished running  in 0 hours 0 minutes and 0.02 seconds (0.02s).
+[0m17:38:56.605029 [error] [MainThread]: Encountered an error:
+Runtime Error
+  Database error while listing schemas in database "USER_DATA"
+  Database Error
+    251005: User is empty
+[0m17:38:56.606121 [debug] [MainThread]: Resource report: {"command_name": "seed", "command_wall_clock_time": 0.41598588, "process_user_time": 1.356102, "process_kernel_time": 0.126005, "process_mem_max_rss": "118980608", "command_success": false, "process_in_blocks": "0", "process_out_blocks": "0"}
+[0m17:38:56.606399 [debug] [MainThread]: Command `dbt seed` failed at 17:38:56.606339 after 0.42 seconds
+[0m17:38:56.606572 [debug] [MainThread]: Flushing usage events
+
+
+============================== 17:39:27.844401 | 6ef23372-5ae3-464a-87d7-91f57490a028 ==============================
+[0m17:39:27.844401 [info ] [MainThread]: Running with dbt=1.7.4
+[0m17:39:27.846505 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': 'integration_tests/test_profile', 'debug': 'False', 'fail_fast': 'False', 'log_path': 'integration_tests/seed_project/logs', 'version_check': 'True', 'warn_error': 'None', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'invocation_command': 'dbt seed --project-dir integration_tests/seed_project --profiles-dir integration_tests/test_profile --full-refresh', 'log_format': 'default', 'introspect': 'True', 'target_path': 'None', 'static_parser': 'True', 'send_anonymous_usage_stats': 'False'}
+[0m17:39:28.057738 [info ] [MainThread]: Registered adapter: snowflake=1.7.1
+[0m17:39:28.067194 [debug] [MainThread]: checksum: 248e8aba381ba2d577dce7ab50d2010c2aac45d2b27e6e6214cdd96d2d41fabc, vars: {}, profile: , target: , version: 1.7.4
+[0m17:39:28.100249 [info ] [MainThread]: Unable to do partial parsing because profile has changed
+[0m17:39:28.668463 [info ] [MainThread]: Found 2 models, 5 seeds, 0 sources, 0 exposures, 0 metrics, 430 macros, 0 groups, 0 semantic models
+[0m17:39:28.669299 [info ] [MainThread]: 
+[0m17:39:28.669698 [debug] [MainThread]: Acquiring new snowflake connection 'master'
+[0m17:39:28.670301 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_USER_DATA'
+[0m17:39:28.677856 [debug] [ThreadPool]: Using snowflake connection "list_USER_DATA"
+[0m17:39:28.678112 [debug] [ThreadPool]: On list_USER_DATA: /* {"app": "dbt", "dbt_version": "1.7.4", "profile_name": "integration_tests", "target_name": "snowflake", "connection_name": "list_USER_DATA"} */
+show terse schemas in database USER_DATA
+    limit 10000
+[0m17:39:28.678330 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m17:39:28.680105 [debug] [ThreadPool]: Snowflake adapter: Error running SQL: /* {"app": "dbt", "dbt_version": "1.7.4", "profile_name": "integration_tests", "target_name": "snowflake", "connection_name": "list_USER_DATA"} */
+show terse schemas in database USER_DATA
+    limit 10000
+[0m17:39:28.680281 [debug] [ThreadPool]: Snowflake adapter: Rolling back transaction.
+[0m17:39:28.680462 [debug] [ThreadPool]: Snowflake adapter: Error running SQL: macro list_schemas
+[0m17:39:28.680617 [debug] [ThreadPool]: Snowflake adapter: Rolling back transaction.
+[0m17:39:28.680800 [debug] [ThreadPool]: On list_USER_DATA: No close available on handle
+[0m17:39:28.681319 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m17:39:28.681500 [debug] [MainThread]: Connection 'list_USER_DATA' was properly closed.
+[0m17:39:28.681667 [info ] [MainThread]: 
+[0m17:39:28.681872 [info ] [MainThread]: Finished running  in 0 hours 0 minutes and 0.01 seconds (0.01s).
+[0m17:39:28.682118 [error] [MainThread]: Encountered an error:
+Runtime Error
+  Database error while listing schemas in database "USER_DATA"
+  Database Error
+    251005: User is empty
+[0m17:39:28.682913 [debug] [MainThread]: Resource report: {"command_name": "seed", "command_wall_clock_time": 0.8687241, "process_user_time": 1.881846, "process_kernel_time": 0.105732, "process_mem_max_rss": "124780544", "command_success": false, "process_in_blocks": "0", "process_out_blocks": "0"}
+[0m17:39:28.683183 [debug] [MainThread]: Command `dbt seed` failed at 17:39:28.683122 after 0.87 seconds
+[0m17:39:28.683357 [debug] [MainThread]: Flushing usage events
+
+
+============================== 17:42:35.199594 | f8692d37-099e-47d5-9869-ddff73174c0b ==============================
+[0m17:42:35.199594 [info ] [MainThread]: Running with dbt=1.7.4
+[0m17:42:35.202237 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'version_check': 'True', 'debug': 'False', 'log_path': 'integration_tests/seed_project/logs', 'profiles_dir': 'integration_tests/test_profile', 'fail_fast': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'log_format': 'default', 'introspect': 'True', 'invocation_command': 'dbt seed --project-dir integration_tests/seed_project --profiles-dir integration_tests/test_profile --full-refresh', 'static_parser': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'send_anonymous_usage_stats': 'False'}
+[0m17:42:35.207955 [error] [MainThread]: Encountered an error:
+Parsing Error
+  Env var required but not provided: 'SNOWFLAKE_ACCOUNT'
+[0m17:42:35.209452 [debug] [MainThread]: Resource report: {"command_name": "seed", "command_wall_clock_time": 0.040963124, "process_user_time": 1.099209, "process_kernel_time": 0.090321, "process_mem_max_rss": "97009664", "command_success": false, "process_in_blocks": "0", "process_out_blocks": "0"}
+[0m17:42:35.209854 [debug] [MainThread]: Command `dbt seed` failed at 17:42:35.209773 after 0.04 seconds
+[0m17:42:35.210055 [debug] [MainThread]: Flushing usage events
+
+
+============================== 17:43:46.613424 | f8a7b045-f08f-4fce-9e8b-934848ef8036 ==============================
+[0m17:43:46.613424 [info ] [MainThread]: Running with dbt=1.7.4
+[0m17:43:46.616127 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': 'integration_tests/test_profile', 'debug': 'False', 'warn_error': 'None', 'log_path': 'integration_tests/seed_project/logs', 'fail_fast': 'False', 'version_check': 'True', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'log_format': 'default', 'static_parser': 'True', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'introspect': 'True', 'target_path': 'None', 'invocation_command': 'dbt seed --project-dir integration_tests/seed_project --profiles-dir integration_tests/test_profile --full-refresh', 'send_anonymous_usage_stats': 'False'}
+[0m17:43:46.622293 [error] [MainThread]: Encountered an error:
+Parsing Error
+  Env var required but not provided: 'SNOWFLAKE_USER'
+[0m17:43:46.623783 [debug] [MainThread]: Resource report: {"command_name": "seed", "command_wall_clock_time": 0.041746043, "process_user_time": 1.098103, "process_kernel_time": 0.092219, "process_mem_max_rss": "96321536", "command_success": false, "process_in_blocks": "0", "process_out_blocks": "0"}
+[0m17:43:46.624152 [debug] [MainThread]: Command `dbt seed` failed at 17:43:46.624077 after 0.04 seconds
+[0m17:43:46.624343 [debug] [MainThread]: Flushing usage events
+
+
+============================== 17:43:58.683846 | c4483f90-478d-4fcd-bf87-411de5f562b2 ==============================
+[0m17:43:58.683846 [info ] [MainThread]: Running with dbt=1.7.4
+[0m17:43:58.686313 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'fail_fast': 'False', 'version_check': 'True', 'log_path': 'integration_tests/seed_project/logs', 'profiles_dir': 'integration_tests/test_profile', 'debug': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'log_format': 'default', 'introspect': 'True', 'static_parser': 'True', 'invocation_command': 'dbt seed --project-dir integration_tests/seed_project --profiles-dir integration_tests/test_profile --full-refresh', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'send_anonymous_usage_stats': 'False'}
+[0m17:43:58.693217 [error] [MainThread]: Encountered an error:
+Parsing Error
+  Env var required but not provided: 'SNOWFLAKE_USER'
+[0m17:43:58.694746 [debug] [MainThread]: Resource report: {"command_name": "seed", "command_wall_clock_time": 0.041389417, "process_user_time": 1.107112, "process_kernel_time": 0.087186, "process_mem_max_rss": "97255424", "command_success": false, "process_in_blocks": "0", "process_out_blocks": "0"}
+[0m17:43:58.695121 [debug] [MainThread]: Command `dbt seed` failed at 17:43:58.695037 after 0.04 seconds
+[0m17:43:58.695327 [debug] [MainThread]: Flushing usage events
+
+
+============================== 17:44:08.667583 | 5690e141-a7be-4b29-b5c5-40b5ff0103eb ==============================
+[0m17:44:08.667583 [info ] [MainThread]: Running with dbt=1.7.4
+[0m17:44:08.670035 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': 'integration_tests/test_profile', 'version_check': 'True', 'debug': 'False', 'log_path': 'integration_tests/seed_project/logs', 'warn_error': 'None', 'fail_fast': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'invocation_command': 'dbt seed --project-dir integration_tests/seed_project --profiles-dir integration_tests/test_profile --full-refresh', 'log_format': 'default', 'introspect': 'True', 'target_path': 'None', 'static_parser': 'True', 'send_anonymous_usage_stats': 'False'}
+[0m17:44:08.955000 [info ] [MainThread]: Registered adapter: snowflake=1.7.1
+[0m17:44:08.965797 [debug] [MainThread]: checksum: 248e8aba381ba2d577dce7ab50d2010c2aac45d2b27e6e6214cdd96d2d41fabc, vars: {}, profile: , target: , version: 1.7.4
+[0m17:44:09.000931 [info ] [MainThread]: Unable to do partial parsing because profile has changed
+[0m17:44:09.001276 [info ] [MainThread]: Unable to do partial parsing because env vars used in profiles.yml have changed
+[0m17:44:09.589493 [info ] [MainThread]: Found 2 models, 5 seeds, 0 sources, 0 exposures, 0 metrics, 430 macros, 0 groups, 0 semantic models
+[0m17:44:09.590322 [info ] [MainThread]: 
+[0m17:44:09.590727 [debug] [MainThread]: Acquiring new snowflake connection 'master'
+[0m17:44:09.591334 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_USER_DATA'
+[0m17:44:09.598787 [debug] [ThreadPool]: Using snowflake connection "list_USER_DATA"
+[0m17:44:09.599065 [debug] [ThreadPool]: On list_USER_DATA: /* {"app": "dbt", "dbt_version": "1.7.4", "profile_name": "integration_tests", "target_name": "snowflake", "connection_name": "list_USER_DATA"} */
+show terse schemas in database USER_DATA
+    limit 10000
+[0m17:44:09.599254 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m17:44:09.606738 [debug] [ThreadPool]: Snowflake adapter: Error running SQL: /* {"app": "dbt", "dbt_version": "1.7.4", "profile_name": "integration_tests", "target_name": "snowflake", "connection_name": "list_USER_DATA"} */
+show terse schemas in database USER_DATA
+    limit 10000
+[0m17:44:09.606933 [debug] [ThreadPool]: Snowflake adapter: Rolling back transaction.
+[0m17:44:09.607112 [debug] [ThreadPool]: Snowflake adapter: Error running SQL: macro list_schemas
+[0m17:44:09.607258 [debug] [ThreadPool]: Snowflake adapter: Rolling back transaction.
+[0m17:44:09.607434 [debug] [ThreadPool]: On list_USER_DATA: No close available on handle
+[0m17:44:09.607964 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m17:44:09.608139 [debug] [MainThread]: Connection 'list_USER_DATA' was properly closed.
+[0m17:44:09.608303 [info ] [MainThread]: 
+[0m17:44:09.608506 [info ] [MainThread]: Finished running  in 0 hours 0 minutes and 0.02 seconds (0.02s).
+[0m17:44:09.608758 [error] [MainThread]: Encountered an error:
+Runtime Error
+  Database error while listing schemas in database "USER_DATA"
+  Database Error
+    251005: User is empty
+[0m17:44:09.610232 [debug] [MainThread]: Resource report: {"command_name": "seed", "command_wall_clock_time": 0.9733235, "process_user_time": 1.89462, "process_kernel_time": 0.117148, "process_mem_max_rss": "124551168", "command_success": false, "process_in_blocks": "0", "process_out_blocks": "0"}
+[0m17:44:09.610511 [debug] [MainThread]: Command `dbt seed` failed at 17:44:09.610451 after 0.97 seconds
+[0m17:44:09.610676 [debug] [MainThread]: Flushing usage events
+
+
+============================== 17:44:19.550473 | 9b869ca8-213d-4b09-afac-4e94c79d1929 ==============================
+[0m17:44:19.550473 [info ] [MainThread]: Running with dbt=1.7.4
+[0m17:44:19.552561 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'version_check': 'True', 'debug': 'False', 'log_path': 'integration_tests/seed_project/logs', 'fail_fast': 'False', 'profiles_dir': 'integration_tests/test_profile', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'log_format': 'default', 'static_parser': 'True', 'invocation_command': 'dbt seed --project-dir integration_tests/seed_project --profiles-dir integration_tests/test_profile --full-refresh', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'target_path': 'None', 'introspect': 'True', 'send_anonymous_usage_stats': 'False'}
+[0m17:44:19.764172 [info ] [MainThread]: Registered adapter: snowflake=1.7.1
+[0m17:44:19.773724 [debug] [MainThread]: checksum: 248e8aba381ba2d577dce7ab50d2010c2aac45d2b27e6e6214cdd96d2d41fabc, vars: {}, profile: , target: , version: 1.7.4
+[0m17:44:19.819204 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m17:44:19.819451 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m17:44:19.827813 [info ] [MainThread]: Found 2 models, 5 seeds, 0 sources, 0 exposures, 0 metrics, 430 macros, 0 groups, 0 semantic models
+[0m17:44:19.828646 [info ] [MainThread]: 
+[0m17:44:19.829059 [debug] [MainThread]: Acquiring new snowflake connection 'master'
+[0m17:44:19.829651 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_USER_DATA'
+[0m17:44:19.837168 [debug] [ThreadPool]: Using snowflake connection "list_USER_DATA"
+[0m17:44:19.837359 [debug] [ThreadPool]: On list_USER_DATA: /* {"app": "dbt", "dbt_version": "1.7.4", "profile_name": "integration_tests", "target_name": "snowflake", "connection_name": "list_USER_DATA"} */
+show terse schemas in database USER_DATA
+    limit 10000
+[0m17:44:19.837519 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m17:44:19.839369 [debug] [ThreadPool]: Snowflake adapter: Error running SQL: /* {"app": "dbt", "dbt_version": "1.7.4", "profile_name": "integration_tests", "target_name": "snowflake", "connection_name": "list_USER_DATA"} */
+show terse schemas in database USER_DATA
+    limit 10000
+[0m17:44:19.839547 [debug] [ThreadPool]: Snowflake adapter: Rolling back transaction.
+[0m17:44:19.839735 [debug] [ThreadPool]: Snowflake adapter: Error running SQL: macro list_schemas
+[0m17:44:19.839887 [debug] [ThreadPool]: Snowflake adapter: Rolling back transaction.
+[0m17:44:19.840062 [debug] [ThreadPool]: On list_USER_DATA: No close available on handle
+[0m17:44:19.840592 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m17:44:19.840761 [debug] [MainThread]: Connection 'list_USER_DATA' was properly closed.
+[0m17:44:19.840923 [info ] [MainThread]: 
+[0m17:44:19.841128 [info ] [MainThread]: Finished running  in 0 hours 0 minutes and 0.01 seconds (0.01s).
+[0m17:44:19.841420 [error] [MainThread]: Encountered an error:
+Runtime Error
+  Database error while listing schemas in database "USER_DATA"
+  Database Error
+    251005: User is empty
+[0m17:44:19.842341 [debug] [MainThread]: Resource report: {"command_name": "seed", "command_wall_clock_time": 0.32168642, "process_user_time": 1.333995, "process_kernel_time": 0.102897, "process_mem_max_rss": "119439360", "command_success": false, "process_in_blocks": "0", "process_out_blocks": "0"}
+[0m17:44:19.842649 [debug] [MainThread]: Command `dbt seed` failed at 17:44:19.842583 after 0.32 seconds
+[0m17:44:19.842833 [debug] [MainThread]: Flushing usage events
+
+
+============================== 17:45:56.862116 | 3cf799c9-b03b-4351-81c0-5d9aac659265 ==============================
+[0m17:45:56.862116 [info ] [MainThread]: Running with dbt=1.7.4
+[0m17:45:56.864928 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'version_check': 'True', 'debug': 'False', 'log_path': 'integration_tests/seed_project/logs', 'fail_fast': 'False', 'profiles_dir': 'integration_tests/test_profile', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'introspect': 'True', 'invocation_command': 'dbt seed --project-dir integration_tests/seed_project --profiles-dir integration_tests/test_profile --full-refresh', 'log_format': 'default', 'target_path': 'None', 'static_parser': 'True', 'send_anonymous_usage_stats': 'False'}
+[0m17:45:56.871448 [error] [MainThread]: Encountered an error:
+Parsing Error
+  Env var required but not provided: 'SNOWFLAKE_USER'
+[0m17:45:56.872963 [debug] [MainThread]: Resource report: {"command_name": "seed", "command_wall_clock_time": 0.044437874, "process_user_time": 1.105044, "process_kernel_time": 0.088767, "process_mem_max_rss": "96567296", "command_success": false, "process_in_blocks": "0", "process_out_blocks": "0"}
+[0m17:45:56.873339 [debug] [MainThread]: Command `dbt seed` failed at 17:45:56.873261 after 0.04 seconds
+[0m17:45:56.873542 [debug] [MainThread]: Flushing usage events
+
+
+============================== 17:46:28.123817 | 796d33f8-eea2-408b-9498-b553f93b9c3a ==============================
+[0m17:46:28.123817 [info ] [MainThread]: Running with dbt=1.7.4
+[0m17:46:28.125923 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': 'integration_tests/test_profile', 'version_check': 'True', 'debug': 'False', 'log_path': 'integration_tests/seed_project/logs', 'fail_fast': 'False', 'warn_error': 'None', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'log_format': 'default', 'invocation_command': 'dbt seed --project-dir integration_tests/seed_project --profiles-dir integration_tests/test_profile --full-refresh', 'static_parser': 'True', 'introspect': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'send_anonymous_usage_stats': 'False'}
+[0m17:46:28.131658 [error] [MainThread]: Encountered an error:
+Parsing Error
+  Env var required but not provided: 'SNOWFLAKE_USER'
+[0m17:46:28.132581 [debug] [MainThread]: Resource report: {"command_name": "seed", "command_wall_clock_time": 0.038655918, "process_user_time": 1.08123, "process_kernel_time": 0.075462, "process_mem_max_rss": "98271232", "command_success": false, "process_in_blocks": "0", "process_out_blocks": "0"}
+[0m17:46:28.132985 [debug] [MainThread]: Command `dbt seed` failed at 17:46:28.132904 after 0.04 seconds
+[0m17:46:28.133194 [debug] [MainThread]: Flushing usage events
+
+
+============================== 17:47:57.235835 | cce57705-7d67-422c-ba99-0b5ae919aa8a ==============================
+[0m17:47:57.235835 [info ] [MainThread]: Running with dbt=1.7.4
+[0m17:47:57.238542 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': 'integration_tests/test_profile', 'fail_fast': 'False', 'debug': 'False', 'log_path': 'integration_tests/seed_project/logs', 'version_check': 'True', 'warn_error': 'None', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'log_format': 'default', 'introspect': 'True', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'static_parser': 'True', 'target_path': 'None', 'invocation_command': 'dbt seed --project-dir integration_tests/seed_project --profiles-dir integration_tests/test_profile --full-refresh', 'send_anonymous_usage_stats': 'False'}
+[0m17:47:57.244490 [error] [MainThread]: Encountered an error:
+Parsing Error
+  Env var required but not provided: 'SNOWFLAKE_USER'
+[0m17:47:57.245962 [debug] [MainThread]: Resource report: {"command_name": "seed", "command_wall_clock_time": 0.04117175, "process_user_time": 1.100122, "process_kernel_time": 0.088884, "process_mem_max_rss": "95862784", "command_success": false, "process_in_blocks": "0", "process_out_blocks": "0"}
+[0m17:47:57.246348 [debug] [MainThread]: Command `dbt seed` failed at 17:47:57.246269 after 0.04 seconds
+[0m17:47:57.246538 [debug] [MainThread]: Flushing usage events
+
+
+============================== 17:48:12.211475 | 0c66d788-2632-41af-9d73-585888026c7d ==============================
+[0m17:48:12.211475 [info ] [MainThread]: Running with dbt=1.7.4
+[0m17:48:12.214060 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': 'integration_tests/test_profile', 'fail_fast': 'False', 'version_check': 'True', 'log_path': 'integration_tests/seed_project/logs', 'warn_error': 'None', 'debug': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'log_format': 'default', 'invocation_command': 'dbt seed --project-dir integration_tests/seed_project --profiles-dir integration_tests/test_profile --full-refresh', 'introspect': 'True', 'static_parser': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'send_anonymous_usage_stats': 'False'}
+[0m17:48:12.219999 [error] [MainThread]: Encountered an error:
+Parsing Error
+  Env var required but not provided: 'SNOWFLAKE_USER'
+[0m17:48:12.221493 [debug] [MainThread]: Resource report: {"command_name": "seed", "command_wall_clock_time": 0.04078675, "process_user_time": 1.103002, "process_kernel_time": 0.08759, "process_mem_max_rss": "97189888", "command_success": false, "process_in_blocks": "0", "process_out_blocks": "0"}
+[0m17:48:12.221903 [debug] [MainThread]: Command `dbt seed` failed at 17:48:12.221812 after 0.04 seconds
+[0m17:48:12.222097 [debug] [MainThread]: Flushing usage events
+
+
+============================== 17:48:24.971689 | b3af7f00-2472-490b-a462-b67c2dc80c43 ==============================
+[0m17:48:24.971689 [info ] [MainThread]: Running with dbt=1.7.4
+[0m17:48:24.973789 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': 'integration_tests/test_profile', 'version_check': 'True', 'warn_error': 'None', 'log_path': 'integration_tests/seed_project/logs', 'fail_fast': 'False', 'debug': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'static_parser': 'True', 'introspect': 'True', 'log_format': 'default', 'target_path': 'None', 'invocation_command': 'dbt seed --project-dir integration_tests/seed_project --profiles-dir integration_tests/test_profile --full-refresh', 'send_anonymous_usage_stats': 'False'}
+[0m17:48:24.979519 [error] [MainThread]: Encountered an error:
+Parsing Error
+  Env var required but not provided: 'SNOWFLAKE_USER'
+[0m17:48:24.980372 [debug] [MainThread]: Resource report: {"command_name": "seed", "command_wall_clock_time": 0.03887571, "process_user_time": 1.088463, "process_kernel_time": 0.069875, "process_mem_max_rss": "95633408", "command_success": false, "process_in_blocks": "0", "process_out_blocks": "0"}
+[0m17:48:24.980725 [debug] [MainThread]: Command `dbt seed` failed at 17:48:24.980647 after 0.04 seconds
+[0m17:48:24.980909 [debug] [MainThread]: Flushing usage events
+
+
+============================== 17:49:31.258984 | c8d059d8-61e0-4f14-9550-3d02ff1b2037 ==============================
+[0m17:49:31.258984 [info ] [MainThread]: Running with dbt=1.7.4
+[0m17:49:31.261581 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': 'integration_tests/test_profile', 'fail_fast': 'False', 'warn_error': 'None', 'log_path': 'integration_tests/seed_project/logs', 'debug': 'False', 'version_check': 'True', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'invocation_command': 'dbt seed --project-dir integration_tests/seed_project --profiles-dir integration_tests/test_profile --full-refresh', 'introspect': 'True', 'static_parser': 'True', 'target_path': 'None', 'log_format': 'default', 'send_anonymous_usage_stats': 'False'}
+[0m17:49:31.545136 [info ] [MainThread]: Registered adapter: snowflake=1.7.1
+[0m17:49:31.555729 [debug] [MainThread]: checksum: 248e8aba381ba2d577dce7ab50d2010c2aac45d2b27e6e6214cdd96d2d41fabc, vars: {}, profile: , target: , version: 1.7.4
+[0m17:49:31.591925 [info ] [MainThread]: Unable to do partial parsing because profile has changed
+[0m17:49:31.592243 [info ] [MainThread]: Unable to do partial parsing because env vars used in profiles.yml have changed
+[0m17:49:32.181507 [info ] [MainThread]: Found 2 models, 5 seeds, 0 sources, 0 exposures, 0 metrics, 430 macros, 0 groups, 0 semantic models
+[0m17:49:32.182376 [info ] [MainThread]: 
+[0m17:49:32.182781 [debug] [MainThread]: Acquiring new snowflake connection 'master'
+[0m17:49:32.183399 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_USER_DATA'
+[0m17:49:32.191185 [debug] [ThreadPool]: Using snowflake connection "list_USER_DATA"
+[0m17:49:32.191489 [debug] [ThreadPool]: On list_USER_DATA: /* {"app": "dbt", "dbt_version": "1.7.4", "profile_name": "integration_tests", "target_name": "snowflake", "connection_name": "list_USER_DATA"} */
+show terse schemas in database USER_DATA
+    limit 10000
+[0m17:49:32.191717 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m17:49:36.597021 [debug] [ThreadPool]: SQL status: SUCCESS 93 in 4.0 seconds
+[0m17:49:36.605136 [debug] [ThreadPool]: On list_USER_DATA: Close
+[0m17:49:37.409405 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_USER_DATA, now list_USER_DATA_ARAFEY)
+[0m17:49:37.420982 [debug] [ThreadPool]: Using snowflake connection "list_USER_DATA_ARAFEY"
+[0m17:49:37.421404 [debug] [ThreadPool]: On list_USER_DATA_ARAFEY: /* {"app": "dbt", "dbt_version": "1.7.4", "profile_name": "integration_tests", "target_name": "snowflake", "connection_name": "list_USER_DATA_ARAFEY"} */
+show terse objects in USER_DATA.ARAFEY limit 10000
+[0m17:49:37.421751 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m17:49:39.881071 [debug] [ThreadPool]: SQL status: SUCCESS 969 in 2.0 seconds
+[0m17:49:39.928677 [debug] [ThreadPool]: On list_USER_DATA_ARAFEY: Close
+[0m17:49:40.848491 [info ] [MainThread]: Concurrency: 10 threads (target='snowflake')
+[0m17:49:40.848735 [info ] [MainThread]: 
+[0m17:49:40.854474 [debug] [Thread-1  ]: Began running node seed.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_column_types_changed
+[0m17:49:40.854768 [debug] [Thread-2  ]: Began running node seed.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_columns_added
+[0m17:49:40.854991 [debug] [Thread-3  ]: Began running node seed.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_columns_no_change
+[0m17:49:40.855466 [debug] [Thread-4  ]: Began running node seed.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_columns_removed
+[0m17:49:40.855261 [info ] [Thread-1  ]: 1 of 5 START seed file ARAFEY.snowflake_timetravel_table_integration_tests_column_types_changed  [RUN]
+[0m17:49:40.855747 [debug] [Thread-5  ]: Began running node seed.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_columns_renamed
+[0m17:49:40.855989 [info ] [Thread-2  ]: 2 of 5 START seed file ARAFEY.snowflake_timetravel_table_integration_tests_columns_added  [RUN]
+[0m17:49:40.856274 [info ] [Thread-3  ]: 3 of 5 START seed file ARAFEY.snowflake_timetravel_table_integration_tests_columns_no_change  [RUN]
+[0m17:49:40.856548 [info ] [Thread-4  ]: 4 of 5 START seed file ARAFEY.snowflake_timetravel_table_integration_tests_columns_removed  [RUN]
+[0m17:49:40.856979 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly list_USER_DATA_ARAFEY, now seed.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_column_types_changed)
+[0m17:49:40.857244 [info ] [Thread-5  ]: 5 of 5 START seed file ARAFEY.snowflake_timetravel_table_integration_tests_columns_renamed  [RUN]
+[0m17:49:40.857735 [debug] [Thread-2  ]: Acquiring new snowflake connection 'seed.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_columns_added'
+[0m17:49:40.858135 [debug] [Thread-3  ]: Acquiring new snowflake connection 'seed.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_columns_no_change'
+[0m17:49:40.858596 [debug] [Thread-4  ]: Acquiring new snowflake connection 'seed.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_columns_removed'
+[0m17:49:40.858818 [debug] [Thread-1  ]: Began compiling node seed.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_column_types_changed
+[0m17:49:40.859227 [debug] [Thread-5  ]: Acquiring new snowflake connection 'seed.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_columns_renamed'
+[0m17:49:40.859459 [debug] [Thread-2  ]: Began compiling node seed.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_columns_added
+[0m17:49:40.859670 [debug] [Thread-3  ]: Began compiling node seed.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_columns_no_change
+[0m17:49:40.859871 [debug] [Thread-4  ]: Began compiling node seed.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_columns_removed
+[0m17:49:40.860166 [debug] [Thread-1  ]: Timing info for seed.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_column_types_changed (compile): 17:49:40.860010 => 17:49:40.860012
+[0m17:49:40.860368 [debug] [Thread-5  ]: Began compiling node seed.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_columns_renamed
+[0m17:49:40.860610 [debug] [Thread-2  ]: Timing info for seed.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_columns_added (compile): 17:49:40.860495 => 17:49:40.860496
+[0m17:49:40.860849 [debug] [Thread-3  ]: Timing info for seed.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_columns_no_change (compile): 17:49:40.860730 => 17:49:40.860731
+[0m17:49:40.861078 [debug] [Thread-4  ]: Timing info for seed.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_columns_removed (compile): 17:49:40.860970 => 17:49:40.860971
+[0m17:49:40.861272 [debug] [Thread-1  ]: Began executing node seed.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_column_types_changed
+[0m17:49:40.861516 [debug] [Thread-5  ]: Timing info for seed.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_columns_renamed (compile): 17:49:40.861404 => 17:49:40.861405
+[0m17:49:40.861714 [debug] [Thread-2  ]: Began executing node seed.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_columns_added
+[0m17:49:40.861910 [debug] [Thread-3  ]: Began executing node seed.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_columns_no_change
+[0m17:49:40.862102 [debug] [Thread-4  ]: Began executing node seed.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_columns_removed
+[0m17:49:40.874820 [debug] [Thread-5  ]: Began executing node seed.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_columns_renamed
+[0m17:49:40.909859 [debug] [Thread-3  ]: Applying DROP to: "USER_DATA"."ARAFEY"."SNOWFLAKE_TIMETRAVEL_TABLE_INTEGRATION_TESTS_COLUMNS_NO_CHANGE"
+[0m17:49:40.911742 [debug] [Thread-2  ]: Applying DROP to: "USER_DATA"."ARAFEY"."SNOWFLAKE_TIMETRAVEL_TABLE_INTEGRATION_TESTS_COLUMNS_ADDED"
+[0m17:49:40.913717 [debug] [Thread-1  ]: Applying DROP to: "USER_DATA"."ARAFEY"."SNOWFLAKE_TIMETRAVEL_TABLE_INTEGRATION_TESTS_COLUMN_TYPES_CHANGED"
+[0m17:49:40.915516 [debug] [Thread-5  ]: Applying DROP to: "USER_DATA"."ARAFEY"."SNOWFLAKE_TIMETRAVEL_TABLE_INTEGRATION_TESTS_COLUMNS_RENAMED"
+[0m17:49:40.918845 [debug] [Thread-3  ]: Using snowflake connection "seed.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_columns_no_change"
+[0m17:49:40.920686 [debug] [Thread-4  ]: Applying DROP to: "USER_DATA"."ARAFEY"."SNOWFLAKE_TIMETRAVEL_TABLE_INTEGRATION_TESTS_COLUMNS_REMOVED"
+[0m17:49:40.921192 [debug] [Thread-2  ]: Using snowflake connection "seed.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_columns_added"
+[0m17:49:40.921797 [debug] [Thread-1  ]: Using snowflake connection "seed.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_column_types_changed"
+[0m17:49:40.922292 [debug] [Thread-5  ]: Using snowflake connection "seed.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_columns_renamed"
+[0m17:49:40.922520 [debug] [Thread-3  ]: On seed.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_columns_no_change: /* {"app": "dbt", "dbt_version": "1.7.4", "profile_name": "integration_tests", "target_name": "snowflake", "node_id": "seed.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_columns_no_change"} */
+drop table if exists "USER_DATA"."ARAFEY"."SNOWFLAKE_TIMETRAVEL_TABLE_INTEGRATION_TESTS_COLUMNS_NO_CHANGE" cascade
+[0m17:49:40.923047 [debug] [Thread-4  ]: Using snowflake connection "seed.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_columns_removed"
+[0m17:49:40.923260 [debug] [Thread-2  ]: On seed.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_columns_added: /* {"app": "dbt", "dbt_version": "1.7.4", "profile_name": "integration_tests", "target_name": "snowflake", "node_id": "seed.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_columns_added"} */
+drop table if exists "USER_DATA"."ARAFEY"."SNOWFLAKE_TIMETRAVEL_TABLE_INTEGRATION_TESTS_COLUMNS_ADDED" cascade
+[0m17:49:40.923467 [debug] [Thread-1  ]: On seed.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_column_types_changed: /* {"app": "dbt", "dbt_version": "1.7.4", "profile_name": "integration_tests", "target_name": "snowflake", "node_id": "seed.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_column_types_changed"} */
+drop table if exists "USER_DATA"."ARAFEY"."SNOWFLAKE_TIMETRAVEL_TABLE_INTEGRATION_TESTS_COLUMN_TYPES_CHANGED" cascade
+[0m17:49:40.923672 [debug] [Thread-5  ]: On seed.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_columns_renamed: /* {"app": "dbt", "dbt_version": "1.7.4", "profile_name": "integration_tests", "target_name": "snowflake", "node_id": "seed.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_columns_renamed"} */
+drop table if exists "USER_DATA"."ARAFEY"."SNOWFLAKE_TIMETRAVEL_TABLE_INTEGRATION_TESTS_COLUMNS_RENAMED" cascade
+[0m17:49:40.923868 [debug] [Thread-3  ]: Opening a new connection, currently in state init
+[0m17:49:40.924065 [debug] [Thread-4  ]: On seed.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_columns_removed: /* {"app": "dbt", "dbt_version": "1.7.4", "profile_name": "integration_tests", "target_name": "snowflake", "node_id": "seed.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_columns_removed"} */
+drop table if exists "USER_DATA"."ARAFEY"."SNOWFLAKE_TIMETRAVEL_TABLE_INTEGRATION_TESTS_COLUMNS_REMOVED" cascade
+[0m17:49:40.924254 [debug] [Thread-2  ]: Opening a new connection, currently in state init
+[0m17:49:40.924460 [debug] [Thread-1  ]: Opening a new connection, currently in state closed
+[0m17:49:40.924665 [debug] [Thread-5  ]: Opening a new connection, currently in state init
+[0m17:49:40.925155 [debug] [Thread-4  ]: Opening a new connection, currently in state init
+[0m17:49:43.164612 [debug] [Thread-3  ]: SQL status: SUCCESS 1 in 2.0 seconds
+[0m17:49:43.168454 [debug] [Thread-2  ]: SQL status: SUCCESS 1 in 2.0 seconds
+[0m17:49:43.169578 [debug] [Thread-4  ]: SQL status: SUCCESS 1 in 2.0 seconds
+[0m17:49:43.175754 [debug] [Thread-1  ]: SQL status: SUCCESS 1 in 2.0 seconds
+[0m17:49:43.191393 [debug] [Thread-3  ]: Using snowflake connection "seed.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_columns_no_change"
+[0m17:49:43.193910 [debug] [Thread-2  ]: Using snowflake connection "seed.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_columns_added"
+[0m17:49:43.194652 [debug] [Thread-5  ]: SQL status: SUCCESS 1 in 2.0 seconds
+[0m17:49:43.196378 [debug] [Thread-4  ]: Using snowflake connection "seed.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_columns_removed"
+[0m17:49:43.198024 [debug] [Thread-1  ]: Using snowflake connection "seed.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_column_types_changed"
+[0m17:49:43.198414 [debug] [Thread-3  ]: On seed.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_columns_no_change: /* {"app": "dbt", "dbt_version": "1.7.4", "profile_name": "integration_tests", "target_name": "snowflake", "node_id": "seed.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_columns_no_change"} */
+create table USER_DATA.ARAFEY.snowflake_timetravel_table_integration_tests_columns_no_change (col1 int,col2 varchar(10),col3 varchar(20))
+[0m17:49:43.198794 [debug] [Thread-2  ]: On seed.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_columns_added: /* {"app": "dbt", "dbt_version": "1.7.4", "profile_name": "integration_tests", "target_name": "snowflake", "node_id": "seed.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_columns_added"} */
+create table USER_DATA.ARAFEY.snowflake_timetravel_table_integration_tests_columns_added (col1 int,col2 varchar(10),col3 varchar(20))
+[0m17:49:43.200205 [debug] [Thread-5  ]: Using snowflake connection "seed.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_columns_renamed"
+[0m17:49:43.200570 [debug] [Thread-4  ]: On seed.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_columns_removed: /* {"app": "dbt", "dbt_version": "1.7.4", "profile_name": "integration_tests", "target_name": "snowflake", "node_id": "seed.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_columns_removed"} */
+create table USER_DATA.ARAFEY.snowflake_timetravel_table_integration_tests_columns_removed (col1 int,col2 varchar(10),col3 varchar(20))
+[0m17:49:43.200932 [debug] [Thread-1  ]: On seed.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_column_types_changed: /* {"app": "dbt", "dbt_version": "1.7.4", "profile_name": "integration_tests", "target_name": "snowflake", "node_id": "seed.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_column_types_changed"} */
+create table USER_DATA.ARAFEY.snowflake_timetravel_table_integration_tests_column_types_changed (col1 int,col2 varchar(10),col3 varchar(20))
+[0m17:49:43.201896 [debug] [Thread-5  ]: On seed.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_columns_renamed: /* {"app": "dbt", "dbt_version": "1.7.4", "profile_name": "integration_tests", "target_name": "snowflake", "node_id": "seed.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_columns_renamed"} */
+create table USER_DATA.ARAFEY.snowflake_timetravel_table_integration_tests_columns_renamed (col1 int,col2 varchar(10),col3 varchar(20))
+[0m17:49:43.717690 [debug] [Thread-2  ]: SQL status: SUCCESS 1 in 1.0 seconds
+[0m17:49:43.741488 [debug] [Thread-2  ]: Using snowflake connection "seed.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_columns_added"
+[0m17:49:43.742366 [debug] [Thread-1  ]: SQL status: SUCCESS 1 in 1.0 seconds
+[0m17:49:43.742973 [debug] [Thread-4  ]: SQL status: SUCCESS 1 in 1.0 seconds
+[0m17:49:43.743725 [debug] [Thread-2  ]: On seed.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_columns_added: /* {"app": "dbt", "dbt_version": "1.7.4", "profile_name": "integration_tests", "target_name": "snowflake", "node_id": "seed.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_columns_added"} */
+BEGIN
+[0m17:49:43.744686 [debug] [Thread-3  ]: SQL status: SUCCESS 1 in 1.0 seconds
+[0m17:49:43.745266 [debug] [Thread-5  ]: SQL status: SUCCESS 1 in 1.0 seconds
+[0m17:49:43.746876 [debug] [Thread-1  ]: Using snowflake connection "seed.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_column_types_changed"
+[0m17:49:43.748339 [debug] [Thread-4  ]: Using snowflake connection "seed.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_columns_removed"
+[0m17:49:43.750513 [debug] [Thread-3  ]: Using snowflake connection "seed.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_columns_no_change"
+[0m17:49:43.752013 [debug] [Thread-5  ]: Using snowflake connection "seed.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_columns_renamed"
+[0m17:49:43.752502 [debug] [Thread-1  ]: On seed.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_column_types_changed: /* {"app": "dbt", "dbt_version": "1.7.4", "profile_name": "integration_tests", "target_name": "snowflake", "node_id": "seed.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_column_types_changed"} */
+BEGIN
+[0m17:49:43.753003 [debug] [Thread-4  ]: On seed.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_columns_removed: /* {"app": "dbt", "dbt_version": "1.7.4", "profile_name": "integration_tests", "target_name": "snowflake", "node_id": "seed.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_columns_removed"} */
+BEGIN
+[0m17:49:43.753342 [debug] [Thread-3  ]: On seed.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_columns_no_change: /* {"app": "dbt", "dbt_version": "1.7.4", "profile_name": "integration_tests", "target_name": "snowflake", "node_id": "seed.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_columns_no_change"} */
+BEGIN
+[0m17:49:43.753768 [debug] [Thread-5  ]: On seed.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_columns_renamed: /* {"app": "dbt", "dbt_version": "1.7.4", "profile_name": "integration_tests", "target_name": "snowflake", "node_id": "seed.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_columns_renamed"} */
+BEGIN
+[0m17:49:44.273432 [debug] [Thread-1  ]: SQL status: SUCCESS 1 in 1.0 seconds
+[0m17:49:44.276260 [debug] [Thread-1  ]: Using snowflake connection "seed.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_column_types_changed"
+[0m17:49:44.277536 [debug] [Thread-4  ]: SQL status: SUCCESS 1 in 1.0 seconds
+[0m17:49:44.278207 [debug] [Thread-1  ]: On seed.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_column_types_changed: /* {"app": "dbt", "dbt_version": "1.7.4", "profile_name": "integration_tests", "target_name": "snowflake", "node_id": "seed.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_column_types_changed"} */
+insert into USER_DATA.ARAFEY.snowflake_timetravel_table_integration_tests_column_types_changed (col1, col2, col3) values
+            (%s,%s,%s),(%s,%s,%s)...
+[0m17:49:44.279339 [debug] [Thread-4  ]: Using snowflake connection "seed.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_columns_removed"
+[0m17:49:44.282133 [debug] [Thread-5  ]: SQL status: SUCCESS 1 in 1.0 seconds
+[0m17:49:44.283424 [debug] [Thread-4  ]: On seed.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_columns_removed: /* {"app": "dbt", "dbt_version": "1.7.4", "profile_name": "integration_tests", "target_name": "snowflake", "node_id": "seed.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_columns_removed"} */
+insert into USER_DATA.ARAFEY.snowflake_timetravel_table_integration_tests_columns_removed (col1, col2, col3) values
+            (%s,%s,%s),(%s,%s,%s)...
+[0m17:49:44.285248 [debug] [Thread-3  ]: SQL status: SUCCESS 1 in 1.0 seconds
+[0m17:49:44.287471 [debug] [Thread-5  ]: Using snowflake connection "seed.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_columns_renamed"
+[0m17:49:44.288555 [debug] [Thread-2  ]: SQL status: SUCCESS 1 in 1.0 seconds
+[0m17:49:44.291143 [debug] [Thread-3  ]: Using snowflake connection "seed.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_columns_no_change"
+[0m17:49:44.291967 [debug] [Thread-5  ]: On seed.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_columns_renamed: /* {"app": "dbt", "dbt_version": "1.7.4", "profile_name": "integration_tests", "target_name": "snowflake", "node_id": "seed.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_columns_renamed"} */
+insert into USER_DATA.ARAFEY.snowflake_timetravel_table_integration_tests_columns_renamed (col1, col2, col3) values
+            (%s,%s,%s),(%s,%s,%s)...
+[0m17:49:44.293199 [debug] [Thread-2  ]: Using snowflake connection "seed.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_columns_added"
+[0m17:49:44.293841 [debug] [Thread-3  ]: On seed.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_columns_no_change: /* {"app": "dbt", "dbt_version": "1.7.4", "profile_name": "integration_tests", "target_name": "snowflake", "node_id": "seed.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_columns_no_change"} */
+insert into USER_DATA.ARAFEY.snowflake_timetravel_table_integration_tests_columns_no_change (col1, col2, col3) values
+            (%s,%s,%s),(%s,%s,%s)...
+[0m17:49:44.295371 [debug] [Thread-2  ]: On seed.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_columns_added: /* {"app": "dbt", "dbt_version": "1.7.4", "profile_name": "integration_tests", "target_name": "snowflake", "node_id": "seed.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_columns_added"} */
+insert into USER_DATA.ARAFEY.snowflake_timetravel_table_integration_tests_columns_added (col1, col2, col3) values
+            (%s,%s,%s),(%s,%s,%s)...
+[0m17:49:45.024047 [debug] [Thread-3  ]: SQL status: SUCCESS 2 in 1.0 seconds
+[0m17:49:45.025494 [debug] [Thread-3  ]: Using snowflake connection "seed.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_columns_no_change"
+[0m17:49:45.026191 [debug] [Thread-3  ]: On seed.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_columns_no_change: /* {"app": "dbt", "dbt_version": "1.7.4", "profile_name": "integration_tests", "target_name": "snowflake", "node_id": "seed.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_columns_no_change"} */
+COMMIT
+[0m17:49:45.088647 [debug] [Thread-2  ]: SQL status: SUCCESS 2 in 1.0 seconds
+[0m17:49:45.089643 [debug] [Thread-2  ]: Using snowflake connection "seed.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_columns_added"
+[0m17:49:45.090282 [debug] [Thread-2  ]: On seed.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_columns_added: /* {"app": "dbt", "dbt_version": "1.7.4", "profile_name": "integration_tests", "target_name": "snowflake", "node_id": "seed.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_columns_added"} */
+COMMIT
+[0m17:49:45.136626 [debug] [Thread-5  ]: SQL status: SUCCESS 2 in 1.0 seconds
+[0m17:49:45.137241 [debug] [Thread-5  ]: Using snowflake connection "seed.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_columns_renamed"
+[0m17:49:45.137616 [debug] [Thread-5  ]: On seed.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_columns_renamed: /* {"app": "dbt", "dbt_version": "1.7.4", "profile_name": "integration_tests", "target_name": "snowflake", "node_id": "seed.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_columns_renamed"} */
+COMMIT
+[0m17:49:45.155360 [debug] [Thread-4  ]: SQL status: SUCCESS 2 in 1.0 seconds
+[0m17:49:45.155758 [debug] [Thread-4  ]: Using snowflake connection "seed.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_columns_removed"
+[0m17:49:45.156038 [debug] [Thread-4  ]: On seed.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_columns_removed: /* {"app": "dbt", "dbt_version": "1.7.4", "profile_name": "integration_tests", "target_name": "snowflake", "node_id": "seed.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_columns_removed"} */
+COMMIT
+[0m17:49:45.172116 [debug] [Thread-1  ]: SQL status: SUCCESS 2 in 1.0 seconds
+[0m17:49:45.172515 [debug] [Thread-1  ]: Using snowflake connection "seed.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_column_types_changed"
+[0m17:49:45.172812 [debug] [Thread-1  ]: On seed.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_column_types_changed: /* {"app": "dbt", "dbt_version": "1.7.4", "profile_name": "integration_tests", "target_name": "snowflake", "node_id": "seed.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_column_types_changed"} */
+COMMIT
+[0m17:49:45.667155 [debug] [Thread-3  ]: SQL status: SUCCESS 1 in 1.0 seconds
+[0m17:49:45.680647 [debug] [Thread-3  ]: Writing runtime SQL for node "seed.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_columns_no_change"
+[0m17:49:45.709190 [debug] [Thread-3  ]: Timing info for seed.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_columns_no_change (execute): 17:49:40.884133 => 17:49:45.708998
+[0m17:49:45.709535 [debug] [Thread-3  ]: On seed.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_columns_no_change: Close
+[0m17:49:45.728909 [debug] [Thread-2  ]: SQL status: SUCCESS 1 in 1.0 seconds
+[0m17:49:45.729604 [debug] [Thread-2  ]: Writing runtime SQL for node "seed.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_columns_added"
+[0m17:49:45.732112 [debug] [Thread-2  ]: Timing info for seed.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_columns_added (execute): 17:49:40.878410 => 17:49:45.731932
+[0m17:49:45.732440 [debug] [Thread-2  ]: On seed.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_columns_added: Close
+[0m17:49:45.742218 [debug] [Thread-5  ]: SQL status: SUCCESS 1 in 1.0 seconds
+[0m17:49:45.743164 [debug] [Thread-5  ]: Writing runtime SQL for node "seed.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_columns_renamed"
+[0m17:49:45.743679 [debug] [Thread-1  ]: SQL status: SUCCESS 1 in 1.0 seconds
+[0m17:49:45.744335 [debug] [Thread-1  ]: Writing runtime SQL for node "seed.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_column_types_changed"
+[0m17:49:45.745178 [debug] [Thread-4  ]: SQL status: SUCCESS 1 in 1.0 seconds
+[0m17:49:45.745843 [debug] [Thread-4  ]: Writing runtime SQL for node "seed.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_columns_removed"
+[0m17:49:45.748085 [debug] [Thread-5  ]: Timing info for seed.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_columns_renamed (execute): 17:49:40.895488 => 17:49:45.747911
+[0m17:49:45.748426 [debug] [Thread-5  ]: On seed.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_columns_renamed: Close
+[0m17:49:45.750424 [debug] [Thread-1  ]: Timing info for seed.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_column_types_changed (execute): 17:49:40.862219 => 17:49:45.750264
+[0m17:49:45.753261 [debug] [Thread-4  ]: Timing info for seed.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_columns_removed (execute): 17:49:40.889640 => 17:49:45.753102
+[0m17:49:45.753521 [debug] [Thread-1  ]: On seed.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_column_types_changed: Close
+[0m17:49:45.753813 [debug] [Thread-4  ]: On seed.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_columns_removed: Close
+[0m17:49:46.604709 [info ] [Thread-3  ]: 3 of 5 OK loaded seed file ARAFEY.snowflake_timetravel_table_integration_tests_columns_no_change  [[32mCREATE 2[0m in 5.75s]
+[0m17:49:46.606836 [info ] [Thread-5  ]: 5 of 5 OK loaded seed file ARAFEY.snowflake_timetravel_table_integration_tests_columns_renamed  [[32mCREATE 2[0m in 5.75s]
+[0m17:49:46.608193 [info ] [Thread-2  ]: 2 of 5 OK loaded seed file ARAFEY.snowflake_timetravel_table_integration_tests_columns_added  [[32mCREATE 2[0m in 5.75s]
+[0m17:49:46.610136 [debug] [Thread-3  ]: Finished running node seed.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_columns_no_change
+[0m17:49:46.610977 [debug] [Thread-5  ]: Finished running node seed.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_columns_renamed
+[0m17:49:46.611741 [debug] [Thread-2  ]: Finished running node seed.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_columns_added
+[0m17:49:46.638096 [info ] [Thread-1  ]: 1 of 5 OK loaded seed file ARAFEY.snowflake_timetravel_table_integration_tests_column_types_changed  [[32mCREATE 2[0m in 5.78s]
+[0m17:49:46.639002 [debug] [Thread-1  ]: Finished running node seed.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_column_types_changed
+[0m17:49:46.643509 [info ] [Thread-4  ]: 4 of 5 OK loaded seed file ARAFEY.snowflake_timetravel_table_integration_tests_columns_removed  [[32mCREATE 2[0m in 5.78s]
+[0m17:49:46.644317 [debug] [Thread-4  ]: Finished running node seed.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_columns_removed
+[0m17:49:46.646813 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m17:49:46.647196 [debug] [MainThread]: Connection 'seed.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_column_types_changed' was properly closed.
+[0m17:49:46.647499 [debug] [MainThread]: Connection 'seed.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_columns_added' was properly closed.
+[0m17:49:46.647795 [debug] [MainThread]: Connection 'seed.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_columns_no_change' was properly closed.
+[0m17:49:46.648075 [debug] [MainThread]: Connection 'seed.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_columns_removed' was properly closed.
+[0m17:49:46.648372 [debug] [MainThread]: Connection 'seed.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_columns_renamed' was properly closed.
+[0m17:49:46.648711 [info ] [MainThread]: 
+[0m17:49:46.649050 [info ] [MainThread]: Finished running 5 seeds in 0 hours 0 minutes and 14.47 seconds (14.47s).
+[0m17:49:46.650513 [debug] [MainThread]: Command end result
+[0m17:49:46.658790 [info ] [MainThread]: 
+[0m17:49:46.659133 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m17:49:46.659402 [info ] [MainThread]: 
+[0m17:49:46.659681 [info ] [MainThread]: Done. PASS=5 WARN=0 ERROR=0 SKIP=0 TOTAL=5
+[0m17:49:46.661559 [debug] [MainThread]: Resource report: {"command_name": "seed", "command_success": true, "command_wall_clock_time": 15.434097, "process_user_time": 2.808648, "process_kernel_time": 0.185099, "process_mem_max_rss": "144162816", "process_in_blocks": "0", "process_out_blocks": "0"}
+[0m17:49:46.662020 [debug] [MainThread]: Command `dbt seed` succeeded at 17:49:46.661920 after 15.43 seconds
+[0m17:49:46.662294 [debug] [MainThread]: Flushing usage events
+
+
+============================== 17:49:48.166939 | c2dc6324-198b-466a-9f54-fddaaa460880 ==============================
+[0m17:49:48.166939 [info ] [MainThread]: Running with dbt=1.7.4
+[0m17:49:48.169421 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': 'integration_tests/test_profile', 'fail_fast': 'False', 'warn_error': 'None', 'log_path': 'integration_tests/seed_project/logs', 'debug': 'False', 'version_check': 'True', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'invocation_command': 'dbt run --project-dir integration_tests/seed_project --profiles-dir integration_tests/test_profile', 'introspect': 'True', 'static_parser': 'True', 'target_path': 'None', 'log_format': 'default', 'send_anonymous_usage_stats': 'False'}
+[0m17:49:48.414321 [info ] [MainThread]: Registered adapter: snowflake=1.7.1
+[0m17:49:48.424087 [debug] [MainThread]: checksum: 248e8aba381ba2d577dce7ab50d2010c2aac45d2b27e6e6214cdd96d2d41fabc, vars: {}, profile: , target: , version: 1.7.4
+[0m17:49:48.489906 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m17:49:48.490157 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m17:49:48.498289 [info ] [MainThread]: Found 2 models, 5 seeds, 0 sources, 0 exposures, 0 metrics, 430 macros, 0 groups, 0 semantic models
+[0m17:49:48.499086 [info ] [MainThread]: 
+[0m17:49:48.499501 [debug] [MainThread]: Acquiring new snowflake connection 'master'
+[0m17:49:48.500035 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_USER_DATA'
+[0m17:49:48.507587 [debug] [ThreadPool]: Using snowflake connection "list_USER_DATA"
+[0m17:49:48.507790 [debug] [ThreadPool]: On list_USER_DATA: /* {"app": "dbt", "dbt_version": "1.7.4", "profile_name": "integration_tests", "target_name": "snowflake", "connection_name": "list_USER_DATA"} */
+show terse schemas in database USER_DATA
+    limit 10000
+[0m17:49:48.507956 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m17:49:50.826382 [debug] [ThreadPool]: SQL status: SUCCESS 93 in 2.0 seconds
+[0m17:49:50.831524 [debug] [ThreadPool]: On list_USER_DATA: Close
+[0m17:49:51.633762 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_USER_DATA, now list_USER_DATA_ARAFEY)
+[0m17:49:51.647322 [debug] [ThreadPool]: Using snowflake connection "list_USER_DATA_ARAFEY"
+[0m17:49:51.647755 [debug] [ThreadPool]: On list_USER_DATA_ARAFEY: /* {"app": "dbt", "dbt_version": "1.7.4", "profile_name": "integration_tests", "target_name": "snowflake", "connection_name": "list_USER_DATA_ARAFEY"} */
+show terse objects in USER_DATA.ARAFEY limit 10000
+[0m17:49:51.648090 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m17:49:55.108671 [debug] [ThreadPool]: SQL status: SUCCESS 969 in 3.0 seconds
+[0m17:49:55.137738 [debug] [ThreadPool]: On list_USER_DATA_ARAFEY: Close
+[0m17:49:56.125305 [info ] [MainThread]: Concurrency: 10 threads (target='snowflake')
+[0m17:49:56.125580 [info ] [MainThread]: 
+[0m17:49:56.127039 [debug] [Thread-1  ]: Began running node model.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_table_does_not_exist
+[0m17:49:56.127295 [debug] [Thread-2  ]: Began running node model.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_was_a_view
+[0m17:49:56.127557 [info ] [Thread-1  ]: 1 of 2 START sql table model ARAFEY.snowflake_timetravel_table_integration_tests_table_does_not_exist  [RUN]
+[0m17:49:56.127868 [info ] [Thread-2  ]: 2 of 2 START sql view model ARAFEY.snowflake_timetravel_table_integration_tests_was_a_view  [RUN]
+[0m17:49:56.128242 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly list_USER_DATA_ARAFEY, now model.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_table_does_not_exist)
+[0m17:49:56.128603 [debug] [Thread-2  ]: Acquiring new snowflake connection 'model.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_was_a_view'
+[0m17:49:56.128804 [debug] [Thread-1  ]: Began compiling node model.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_table_does_not_exist
+[0m17:49:56.128998 [debug] [Thread-2  ]: Began compiling node model.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_was_a_view
+[0m17:49:56.134085 [debug] [Thread-1  ]: Writing injected SQL for node "model.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_table_does_not_exist"
+[0m17:49:56.136526 [debug] [Thread-2  ]: Writing injected SQL for node "model.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_was_a_view"
+[0m17:49:56.137267 [debug] [Thread-2  ]: Timing info for model.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_was_a_view (compile): 17:49:56.134298 => 17:49:56.137126
+[0m17:49:56.137537 [debug] [Thread-1  ]: Timing info for model.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_table_does_not_exist (compile): 17:49:56.129118 => 17:49:56.137402
+[0m17:49:56.137739 [debug] [Thread-2  ]: Began executing node model.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_was_a_view
+[0m17:49:56.137954 [debug] [Thread-1  ]: Began executing node model.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_table_does_not_exist
+[0m17:49:56.161401 [debug] [Thread-2  ]: Dropping relation "USER_DATA"."ARAFEY"."SNOWFLAKE_TIMETRAVEL_TABLE_INTEGRATION_TESTS_WAS_A_VIEW" because it is of type table
+[0m17:49:56.171410 [debug] [Thread-2  ]: Applying DROP to: "USER_DATA"."ARAFEY"."SNOWFLAKE_TIMETRAVEL_TABLE_INTEGRATION_TESTS_WAS_A_VIEW"
+[0m17:49:56.175360 [debug] [Thread-1  ]: Writing runtime sql for node "model.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_table_does_not_exist"
+[0m17:49:56.178807 [debug] [Thread-2  ]: Using snowflake connection "model.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_was_a_view"
+[0m17:49:56.179132 [debug] [Thread-2  ]: On model.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_was_a_view: /* {"app": "dbt", "dbt_version": "1.7.4", "profile_name": "integration_tests", "target_name": "snowflake", "node_id": "model.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_was_a_view"} */
+drop table if exists "USER_DATA"."ARAFEY"."SNOWFLAKE_TIMETRAVEL_TABLE_INTEGRATION_TESTS_WAS_A_VIEW" cascade
+[0m17:49:56.179340 [debug] [Thread-2  ]: Opening a new connection, currently in state init
+[0m17:49:56.179979 [debug] [Thread-1  ]: Using snowflake connection "model.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_table_does_not_exist"
+[0m17:49:56.180212 [debug] [Thread-1  ]: On model.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_table_does_not_exist: /* {"app": "dbt", "dbt_version": "1.7.4", "profile_name": "integration_tests", "target_name": "snowflake", "node_id": "model.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_table_does_not_exist"} */
+create or replace  table USER_DATA.ARAFEY.snowflake_timetravel_table_integration_tests_table_does_not_exist
+         as
+        (
+select 1 as doesnotmatter
+        );
+[0m17:49:56.180416 [debug] [Thread-1  ]: Opening a new connection, currently in state closed
+[0m17:49:58.789074 [debug] [Thread-2  ]: SQL status: SUCCESS 1 in 3.0 seconds
+[0m17:49:58.808391 [debug] [Thread-2  ]: Writing runtime sql for node "model.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_was_a_view"
+[0m17:49:58.809872 [debug] [Thread-2  ]: Using snowflake connection "model.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_was_a_view"
+[0m17:49:58.810391 [debug] [Thread-2  ]: On model.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_was_a_view: /* {"app": "dbt", "dbt_version": "1.7.4", "profile_name": "integration_tests", "target_name": "snowflake", "node_id": "model.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_was_a_view"} */
+create or replace   view USER_DATA.ARAFEY.snowflake_timetravel_table_integration_tests_was_a_view
+  
+   as (
+    
+select 1::int as col1, 'old'::varchar(10) as col2, 'values'::varchar(20) as col3
+union all
+select 2, 'old', 'values'
+  );
+[0m17:49:59.318368 [debug] [Thread-2  ]: SQL status: SUCCESS 1 in 1.0 seconds
+[0m17:49:59.351054 [debug] [Thread-2  ]: Timing info for model.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_was_a_view (execute): 17:49:56.138078 => 17:49:59.350765
+[0m17:49:59.351596 [debug] [Thread-2  ]: On model.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_was_a_view: Close
+[0m17:49:59.394907 [debug] [Thread-1  ]: SQL status: SUCCESS 1 in 3.0 seconds
+[0m17:49:59.397697 [debug] [Thread-1  ]: Using snowflake connection "model.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_table_does_not_exist"
+[0m17:49:59.398200 [debug] [Thread-1  ]: On model.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_table_does_not_exist: /* {"app": "dbt", "dbt_version": "1.7.4", "profile_name": "integration_tests", "target_name": "snowflake", "node_id": "model.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_table_does_not_exist"} */
+drop table if exists USER_DATA.ARAFEY.snowflake_timetravel_table_integration_tests_table_does_not_exist
+[0m17:49:59.912398 [debug] [Thread-1  ]: SQL status: SUCCESS 1 in 1.0 seconds
+[0m17:49:59.922091 [debug] [Thread-1  ]: Timing info for model.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_table_does_not_exist (execute): 17:49:56.149709 => 17:49:59.921735
+[0m17:49:59.922746 [debug] [Thread-1  ]: On model.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_table_does_not_exist: Close
+[0m17:50:00.154367 [info ] [Thread-2  ]: 2 of 2 OK created sql view model ARAFEY.snowflake_timetravel_table_integration_tests_was_a_view  [[32mSUCCESS 1[0m in 4.03s]
+[0m17:50:00.155310 [debug] [Thread-2  ]: Finished running node model.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_was_a_view
+[0m17:50:01.044149 [info ] [Thread-1  ]: 1 of 2 OK created sql table model ARAFEY.snowflake_timetravel_table_integration_tests_table_does_not_exist  [[32mSUCCESS 1[0m in 4.92s]
+[0m17:50:01.045287 [debug] [Thread-1  ]: Finished running node model.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_table_does_not_exist
+[0m17:50:01.047739 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m17:50:01.048272 [debug] [MainThread]: Connection 'model.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_table_does_not_exist' was properly closed.
+[0m17:50:01.048645 [debug] [MainThread]: Connection 'model.snowflake_timetravel_table_integration_tests.snowflake_timetravel_table_integration_tests_was_a_view' was properly closed.
+[0m17:50:01.049042 [info ] [MainThread]: 
+[0m17:50:01.049453 [info ] [MainThread]: Finished running 1 view model, 1 table model in 0 hours 0 minutes and 12.55 seconds (12.55s).
+[0m17:50:01.050451 [debug] [MainThread]: Command end result
+[0m17:50:01.060679 [info ] [MainThread]: 
+[0m17:50:01.061124 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m17:50:01.061463 [info ] [MainThread]: 
+[0m17:50:01.061820 [info ] [MainThread]: Done. PASS=2 WARN=0 ERROR=0 SKIP=0 TOTAL=2
+[0m17:50:01.063230 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 12.926588, "process_user_time": 1.990151, "process_kernel_time": 0.152093, "process_mem_max_rss": "136134656", "process_in_blocks": "0", "process_out_blocks": "0"}
+[0m17:50:01.063757 [debug] [MainThread]: Command `dbt run` succeeded at 17:50:01.063654 after 12.93 seconds
+[0m17:50:01.064042 [debug] [MainThread]: Flushing usage events
