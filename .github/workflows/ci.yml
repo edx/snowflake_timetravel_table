@@ -10,7 +10,7 @@ on:
 jobs:
   check_black:
     name: Check Black
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v1
     - name: Setup Python
